@@ -212,45 +212,35 @@ export default function Navbar() {
 
   const aboutDropdown = [
     {
-      label: t("whoWeAre"),
-      href: "/about/who-we-are",
+      label: t("AboutOrganization"),
+      href: "/about/about-organization",
     },
 
     {
-      label: t("missionVision"),
-      href: "/about/mission-vision",
-    },
-
-    {
-      label: t("ourTeam"),
-      href: "/about/team",
-    },
-
-    {
-      label: t("history"),
-      href: "/about/history",
+      label: t("aboutAuthority"),
+      href: "/about/about-authority",
     },
   ];
 
   const activitiesDropdown = [
     {
-      label: t("education"),
+      label: t("EducationAndTraining"),
       href: "/activities/education",
     },
 
     {
-      label: t("health"),
-      href: "/activities/health",
+      label: t("DawahAndResearch"),
+      href: "/activities/dawah",
     },
 
     {
-      label: t("community"),
-      href: "/activities/community",
+      label: t("SelfPurification"),
+      href: "/activities/self-purification",
     },
 
     {
-      label: t("skillTraining"),
-      href: "/activities/skill-training",
+      label: t("ServiceOfHumanity"),
+      href: "/activities/service-of-humanity",
     },
   ];
 
