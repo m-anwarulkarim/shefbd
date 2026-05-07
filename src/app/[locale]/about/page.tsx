@@ -104,24 +104,28 @@ export default function AboutPage() {
               <HeartHandshake className="h-3.5 w-3.5" />
               {t("activityBadge")}
             </Badge>
+
             <h2 className="text-3xl font-extrabold tracking-tight text-emerald-950 sm:text-4xl">
               {t("activityTitle")}
             </h2>
+
             <p className="mx-auto mt-3 max-w-xl text-base text-slate-500">
               {t("activitySubtitle")}
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {[1, 2, 3, 4].map((i) => (
               <Card
                 key={i}
                 className="group border-emerald-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-900/5"
               >
-                <CardContent className="flex flex-col items-center gap-4 p-6 text-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700 transition-colors duration-300 group-hover:bg-emerald-700 group-hover:text-white">
+                <CardContent className="flex min-h-[150px] flex-col items-center justify-center gap-3 p-4 text-center sm:min-h-[170px] sm:gap-4 sm:p-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700 transition-colors duration-300 group-hover:bg-emerald-700 group-hover:text-white sm:h-14 sm:w-14">
                     {activityIcons[i - 1]}
                   </div>
-                  <h3 className="text-sm font-bold text-emerald-950">
+
+                  <h3 className="text-xs font-bold leading-relaxed text-emerald-950 sm:text-sm">
                     {t(`activity${i}`)}
                   </h3>
                 </CardContent>
