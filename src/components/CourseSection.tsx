@@ -64,7 +64,7 @@ function CourseCard({
           alt={t(`${course.key}Title`)}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.015]"
+          className=" object-center transition-transform duration-700 group-hover:scale-[1.015]"
         />
 
         <Badge
