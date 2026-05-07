@@ -16,35 +16,44 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const courses = [
   {
     key: "course1",
     image: "/images/course-1.jpg",
-    color: "from-yellow-400 to-amber-500",
     accent: "bg-amber-500",
     lightBg: "bg-amber-50",
     textColor: "text-amber-700",
-    borderColor: "border-amber-200",
   },
   {
     key: "course2",
     image: "/images/course-2.jpg",
-    color: "from-emerald-800 to-emerald-950",
     accent: "bg-emerald-700",
     lightBg: "bg-emerald-50",
     textColor: "text-emerald-700",
-    borderColor: "border-emerald-200",
   },
   {
     key: "course3",
     image: "/images/course-3.jpg",
-    color: "from-green-400 to-emerald-500",
     accent: "bg-green-600",
     lightBg: "bg-green-50",
     textColor: "text-green-700",
-    borderColor: "border-green-200",
   },
+  // ৩টার বেশি course add করলে automatic slider হবে
+  // {
+  //   key: "course4",
+  //   image: "/images/course-4.jpg",
+  //   accent: "bg-teal-600",
+  //   lightBg: "bg-teal-50",
+  //   textColor: "text-teal-700",
+  // },
 ];
 
 function CourseCard({
@@ -55,17 +64,15 @@ function CourseCard({
   t: ReturnType<typeof useTranslations>;
 }) {
   return (
-    <Card className="group relative overflow-hidden rounded-3xl border border-emerald-100/80 bg-white p-0 shadow-xl shadow-emerald-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-900/10">
+    <Card className="group relative h-full overflow-hidden rounded-3xl border border-emerald-100/80 bg-white p-0 shadow-xl shadow-emerald-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-900/10">
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-[28px] bg-white">
         <Image
           src={course.image}
           alt={t(`${course.key}Title`)}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-center transition-transform duration-700 group-hover:scale-[1.015]"
+          className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.015]"
         />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/[0.02] via-transparent to-transparent" />
 
         <Badge
           className={`absolute right-4 top-4 gap-1 border border-white/20 ${course.accent} px-3 py-1.5 text-[11px] font-bold text-white shadow-xl backdrop-blur-md`}
@@ -145,16 +152,16 @@ function CourseCard({
     </Card>
   );
 }
+
 export default function CourseSection() {
   const t = useTranslations("Courses");
+  const shouldUseSlider = courses.length > 3;
 
   return (
     <section className="relative w-full overflow-hidden bg-white py-16 lg:py-24">
-      {/* Subtle background */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-emerald-50/50 via-transparent to-emerald-50/30" />
 
       <div className="relative mx-auto max-w-7xl px-4">
-        {/* Section Header */}
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <Badge
             variant="outline"
@@ -163,20 +170,44 @@ export default function CourseSection() {
             <GraduationCap className="h-3.5 w-3.5" />
             {t("badge")}
           </Badge>
+
           <h2 className="text-3xl font-extrabold tracking-tight text-emerald-950 sm:text-4xl">
             {t("heading")}
           </h2>
+
           <p className="mt-3 text-base text-slate-500">{t("subheading")}</p>
         </div>
 
-        {/* Course Cards Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {courses.map((course) => (
-            <CourseCard key={course.key} course={course} t={t} />
-          ))}
-        </div>
+        {shouldUseSlider ? (
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="relative w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {courses.map((course) => (
+                <CarouselItem
+                  key={course.key}
+                  className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                >
+                  <CourseCard course={course} t={t} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
 
-        {/* Bottom CTA */}
+            <CarouselPrevious className="left-0 hidden border-emerald-200 text-emerald-700 hover:bg-emerald-50 md:flex lg:-left-5" />
+            <CarouselNext className="right-0 hidden border-emerald-200 text-emerald-700 hover:bg-emerald-50 md:flex lg:-right-5" />
+          </Carousel>
+        ) : (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {courses.map((course) => (
+              <CourseCard key={course.key} course={course} t={t} />
+            ))}
+          </div>
+        )}
+
         <div className="mt-12 text-center">
           <Button
             variant="outline"
