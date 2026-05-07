@@ -23,6 +23,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const courses = [
   {
@@ -46,14 +47,6 @@ const courses = [
     lightBg: "bg-green-50",
     textColor: "text-green-700",
   },
-  // ৩টার বেশি course add করলে automatic slider হবে
-  // {
-  //   key: "course4",
-  //   image: "/images/course-4.jpg",
-  //   accent: "bg-teal-600",
-  //   lightBg: "bg-teal-50",
-  //   textColor: "text-teal-700",
-  // },
 ];
 
 function CourseCard({
@@ -153,9 +146,45 @@ function CourseCard({
   );
 }
 
+function CourseSlider({ t }: { t: ReturnType<typeof useTranslations> }) {
+  return (
+    <Carousel
+      plugins={[
+        Autoplay({
+          delay: 3000,
+          stopOnInteraction: false,
+        }),
+      ]}
+      opts={{
+        align: "start",
+        loop: courses.length > 1,
+      }}
+      className="relative w-full"
+    >
+      <CarouselContent className="-ml-4">
+        {courses.map((course) => (
+          <CarouselItem
+            key={course.key}
+            className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+          >
+            <CourseCard course={course} t={t} />
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+
+      {courses.length > 1 && (
+        <>
+          <CarouselPrevious className="left-2 border-emerald-200 text-emerald-700 hover:bg-emerald-50 lg:-left-5" />
+          <CarouselNext className="right-2 border-emerald-200 text-emerald-700 hover:bg-emerald-50 lg:-right-5" />
+        </>
+      )}
+    </Carousel>
+  );
+}
+
 export default function CourseSection() {
   const t = useTranslations("Courses");
-  const shouldUseSlider = courses.length > 3;
+  const shouldUseDesktopSlider = courses.length > 3;
 
   return (
     <section className="relative w-full overflow-hidden bg-white py-16 lg:py-24">
@@ -178,35 +207,21 @@ export default function CourseSection() {
           <p className="mt-3 text-base text-slate-500">{t("subheading")}</p>
         </div>
 
-        {shouldUseSlider ? (
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="relative w-full"
-          >
-            <CarouselContent className="-ml-4">
-              {courses.map((course) => (
-                <CarouselItem
-                  key={course.key}
-                  className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
-                >
-                  <CourseCard course={course} t={t} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
+        <div className="lg:hidden">
+          <CourseSlider t={t} />
+        </div>
 
-            <CarouselPrevious className="left-0 hidden border-emerald-200 text-emerald-700 hover:bg-emerald-50 md:flex lg:-left-5" />
-            <CarouselNext className="right-0 hidden border-emerald-200 text-emerald-700 hover:bg-emerald-50 md:flex lg:-right-5" />
-          </Carousel>
-        ) : (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {courses.map((course) => (
-              <CourseCard key={course.key} course={course} t={t} />
-            ))}
-          </div>
-        )}
+        <div className="hidden lg:block">
+          {shouldUseDesktopSlider ? (
+            <CourseSlider t={t} />
+          ) : (
+            <div className="grid gap-6 lg:grid-cols-3">
+              {courses.map((course) => (
+                <CourseCard key={course.key} course={course} t={t} />
+              ))}
+            </div>
+          )}
+        </div>
 
         <div className="mt-12 text-center">
           <Button
