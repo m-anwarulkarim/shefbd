@@ -42,7 +42,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="absolute -inset-4 rounded-full bg-emerald-500/10 blur-2xl" />
                 <Image
-                  src="/logo.png"
+                  src="/Logo.png"
                   alt="SHEF Logo"
                   width={280}
                   height={280}

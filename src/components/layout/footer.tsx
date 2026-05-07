@@ -64,7 +64,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center gap-3">
               <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/5 p-1 backdrop-blur-sm">
                 <Image
-                  src="/logo.png"
+                  src="/Logo.png"
                   alt="SHEF Logo"
                   width={48}
                   height={48}

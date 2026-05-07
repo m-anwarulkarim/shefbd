@@ -389,7 +389,7 @@ export default function Navbar() {
 
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="/logo.png"
+                src="/Logo.png"
                 alt="SHEF Logo"
                 width={82}
                 height={82}
