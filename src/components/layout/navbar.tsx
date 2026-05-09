@@ -275,7 +275,7 @@ export default function Navbar() {
 
     {
       label: t("ongoingProjects"),
-      href: "/projects",
+      href: "/ongoing-projects",
     },
 
     {

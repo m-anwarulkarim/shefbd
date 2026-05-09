@@ -459,6 +459,82 @@
     "phoneTitle": "Phone"
   },
 
+  "Membership": {
+    "badge": "Membership & Donation",
+    "title": "Become a Part of Our Mission",
+    "subtitle": "Support the construction of Sabilul Huda Mosque Complex and Islamic Centre through donation and membership.",
+
+    "complexTitle": "Mosque Complex & Islamic Centre",
+    "complexSubtitle": "A complete Islamic educational and humanitarian project.",
+    "complexDescription": "Sabilul Huda Education Foundation (SHEF) plans to establish a comprehensive Mosque Complex and Islamic Centre as the center of all welfare, educational, dawah, research, and humanitarian activities across the country.",
+
+    "whatWillBe": "What Will Be in the Complex?",
+
+    "donationInfo": "Donation Information",
+    "supportMission": "Support our mission through your generous contribution.",
+
+    "mobile": "bKash/Nagad",
+    "accountName": "Account Name",
+    "accountNumber": "Account Number",
+    "bank": "Bank",
+    "branch": "Branch",
+    "routingNo": "Routing No",
+    "swiftCode": "Swift Code",
+
+    "membershipTypes": "Membership Types",
+
+    "lifeMember": "Life Member",
+    "lifeMemberDesc": "Anyone who donates at least 1,00,000 BDT at one time for the welfare of SHEF will become a Life Member of the foundation.",
+
+    "donorMember": "Donor Member",
+    "donorMemberDesc": "Anyone who donates at least 50,000 BDT for the welfare of SHEF will become a Donor Member and will remain associated with the foundation.",
+
+    "squareFeetDonor": "Square Feet Donor",
+    "squareFeetDesc": "Anyone contributing for one square foot of land and construction cost will be recognized as a Square Feet Donor of SHEF.",
+
+    "applicationForm": "Application Form",
+    "applicationSubtitle": "Fill out the form below to apply for membership.",
+
+    "memberType": "Member Type",
+    "selectMemberType": "Select Member Type",
+
+    "name": "Name",
+    "namePlaceholder": "Your full name",
+
+    "fatherName": "Father's Name",
+    "fatherPlaceholder": "Father's full name",
+
+    "phone": "Phone Number",
+
+    "email": "Email Address",
+    "emailPlaceholder": "your@email.com",
+
+    "occupation": "Occupation",
+    "occupationPlaceholder": "Your occupation",
+
+    "address": "Address",
+    "addressPlaceholder": "Your address",
+
+    "paymentMethod": "Willing to Pay Through",
+    "paymentPlaceholder": "Select payment method",
+
+    "privacyText": "All information of honorable members will remain secure and confidential. Information will not be disclosed publicly or shared with anyone else, InshaAllah.",
+
+    "submit": "Submit Application",
+
+    "helpTitle": "How You Can Help",
+    "helpSubtitle": "Become part of this Sadaqah Jariyah project.",
+    "helpDesc1": "We sincerely appeal to all brothers and sisters to participate in the establishment of this mosque complex and Islamic centre through donation, membership, and cooperation.",
+    "helpDesc2": "This project aims to provide Islamic education, dawah activities, humanitarian services, research facilities, and social welfare support for future generations.",
+    "landPriceTitle": "Contribution Information",
+    "landPrice": "Land price per square feet",
+    "constructionPrice": "Construction cost per square feet",
+
+    "topNoticeTitle": "Want to apply for membership?",
+    "topNoticeDesc": "Fill out the form below to submit your membership application.",
+    "goToForm": "Go to Form"
+  },
+
   "Footer": {
     "orgName": "SHEF",
     "orgFullName": "Sabilul Huda Education Foundation",

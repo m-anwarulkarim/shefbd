@@ -18,7 +18,7 @@ export default function Footer() {
     { label: t("home"), href: "/" },
     { label: t("aboutUs"), href: "/about" },
     { label: t("ourActivities"), href: "/activities" },
-    { label: t("ongoingProjects"), href: "/projects" },
+    { label: t("ongoingProjects"), href: "/ongoing-projects" },
     { label: t("gallery"), href: "/gallery" },
     { label: t("contact"), href: "/contact" },
   ];
