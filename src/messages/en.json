@@ -559,6 +559,86 @@
     "submit": "Send My Application"
   },
 
+  "EducationTraining": {
+    "badge": "Education & Training",
+    "title": "Education and Training Activities",
+    "subtitle": "Empowering communities through Islamic education, modern learning, and life-oriented development initiatives.",
+
+    "activity1": "Preparation of modern Islamic curriculum and textbooks.",
+
+    "activity2": "Establishment of ‘Sabahi Maktab’ to spread basic education at pre-primary level.",
+
+    "activity3": "Conducting ‘After School Maktab’ activities to protect the faith of school-going children.",
+
+    "activity4": "Establishment of schools/madrasahs with integrated syllabus of Islamic and general education.",
+
+    "activity5": "Establishment of schools, colleges, universities and technical schools in religious environment.",
+
+    "activity6": "Take proper measures for children, elderly, disabled and women education.",
+
+    "activity7": "Competition on education, culture and life-oriented issues."
+  },
+
+  "DawahResearch": {
+    "badge": "Dawah & Research",
+    "title": "Dawah & Research",
+    "subtitle": "Promoting authentic Islamic knowledge, research, and dawah activities for the betterment of the Ummah.",
+
+    "activity1": "Construction of ‘Sabilul Huda Mosque Complex and Islamic Centre’ as a center for conducting multipurpose Dawah activities.",
+
+    "activity2": "To develop up-to-date Islamic scholars and daees to meet the contemporary needs of the Muslim Ummah.",
+
+    "activity3": "Organizing religious mahfils, seminars, symposiums, exchange of views and discussions.",
+
+    "activity4": "Publication and dissemination of original, translated and research books on Islam.",
+
+    "activity5": "To take various initiatives to eradicate shirk-bid’ah, marginalization and extremism.",
+
+    "activity6": "Live and video discussions based on social media."
+  },
+
+  "Tazkiyah": {
+    "badge": "Tazkiyah & Self-Purification",
+    "title": "Tazkiyah & Self-Purification",
+    "subtitle": "Building moral character, spiritual purification, and social reform based on authentic Islamic teachings.",
+
+    "activity1": "Conducting self-purification activities free from shirk and bid’ah in the methods of Prophet (SWA).",
+
+    "activity2": "Publication and dissemination of books on character correction and social reform.",
+
+    "activity3": "To take various initiatives to protect people from shirk, bid’ah and superstition.",
+
+    "activity4": "Islah-e-Muasharah or taking various initiatives for social reform.",
+
+    "activity5": "Organizing ‘Majlisut Tazkiyah’ or Majlis of Self-Purification."
+  },
+
+  "ServiceHumanity": {
+    "badge": "Service of Humanity",
+    "title": "Service of Humanity",
+    "subtitle": "Extending compassionate humanitarian support and welfare services to underprivileged and vulnerable communities.",
+
+    "activity1": "To provide various types of training and financial assistance for unemployment and poverty alleviation.",
+
+    "activity2": "Providing relief assistance in areas affected by natural disasters.",
+
+    "activity3": "Distribution of iftar items and Ramadan food among the needy during the month of Ramadan.",
+
+    "activity4": "Distribution of Fitra, clothes and Eid items among the destitute on the occasion of Eid.",
+
+    "activity5": "Distribution of sacrificial animals and meat among the poor.",
+
+    "activity6": "Distribution of earning materials like rickshaws, sewing machines etc. among the destitute.",
+
+    "activity7": "Providing free or low-cost medical care to the needy.",
+
+    "activity8": "Installation of tubewells and reservoirs for the underprivileged for drinking water.",
+
+    "activity9": "Rehabilitation of orphans, disabled, widows, neo-Muslims and street children.",
+
+    "activity10": "Tree plantation and care for self-reliance and environmental protection."
+  },
+
   "Footer": {
     "orgName": "SHEF",
     "orgFullName": "Sabilul Huda Education Foundation",

@@ -311,7 +311,7 @@ export default function Navbar() {
 
             <div className="flex items-center gap-2.5">
               <Link
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61558152154700"
                 aria-label="Facebook"
                 className="rounded-full p-1 text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white"
               >
@@ -319,7 +319,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="#"
+                href="https://www.youtube.com/"
                 aria-label="Youtube"
                 className="rounded-full p-1 text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white"
               >
