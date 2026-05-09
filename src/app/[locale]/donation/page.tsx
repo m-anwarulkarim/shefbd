@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { HandHeart, Settings } from "lucide-react";
+import {
+  HandHeart,
+  Settings,
+  ShieldCheck,
+  CreditCard,
+  HeartHandshake,
+} from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,195 +22,277 @@ export default function DonationPage() {
   const [selectedAmount, setSelectedAmount] = useState(10);
 
   return (
-    <section className="py-10">
-      <div className="mx-auto max-w-xl px-4">
-        <div className="mb-8 text-center">
-          <Badge className="mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-100">
-            <HandHeart className="mr-1 h-3.5 w-3.5" />
+    <section className="relative py-16 lg:py-24">
+      <div className="mx-auto max-w-3xl px-4">
+        {/* Header */}
+        <div className="mb-10 text-center">
+          <Badge
+            variant="outline"
+            className="mb-4 border-emerald-200 bg-emerald-50 px-4 py-1 text-emerald-700"
+          >
+            <HandHeart className="mr-2 h-4 w-4" />
             {t("badge")}
           </Badge>
 
-          <h1 className="text-3xl font-extrabold text-slate-900">
+          <h1 className="text-3xl font-extrabold tracking-tight text-emerald-950 sm:text-4xl">
             {t("title")}
           </h1>
 
-          <p className="mt-2 text-sm text-slate-500">{t("subtitle")}</p>
+          <div className="mx-auto my-6 h-1 w-24 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-700" />
+
+          <p className="mx-auto max-w-2xl text-base leading-8 text-slate-600">
+            {t("subtitle")}
+          </p>
         </div>
 
-        <form
-          action="https://formsubmit.co/b5eb5e98de3df7c0deb3d195673410b2"
-          method="POST"
-          className="space-y-8"
-        >
-          <input
-            type="hidden"
-            name="_subject"
-            value="New Donation Submission"
-          />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-          <input
-            type="hidden"
-            name="_next"
-            value="http://localhost:3000/thank-you"
-          />
-          <input
-            type="hidden"
-            name="Donation Amount"
-            value={`BDT ${selectedAmount}`}
-          />
-
-          <div>
-            <h2 className="mb-2 text-lg font-bold text-slate-900">
-              {t("amountTitle")}
-            </h2>
-
-            <p className="mb-5 text-sm text-slate-500">{t("amountDesc")}</p>
-
-            <label className="mb-3 block text-sm font-semibold text-slate-800">
-              {t("amountLabel")} <span className="text-red-500">*</span>
-            </label>
-
-            <div className="grid grid-cols-3 gap-3">
-              {amounts.map((amount) => (
-                <button
-                  type="button"
-                  key={amount}
-                  onClick={() => setSelectedAmount(amount)}
-                  className={`rounded-md border px-4 py-3 text-sm font-semibold transition ${
-                    selectedAmount === amount
-                      ? "border-emerald-600 bg-emerald-600 text-white"
-                      : "border-slate-200 bg-white text-slate-700 hover:border-emerald-300"
-                  }`}
-                >
-                  BDT {amount.toFixed(2)}
-                </button>
-              ))}
-            </div>
-
-            <Input
-              type="number"
-              name="Custom Amount"
-              placeholder={t("customAmountPlaceholder")}
-              className="mt-3"
-              onChange={(e) => setSelectedAmount(Number(e.target.value || 0))}
-            />
-          </div>
-
-          <div>
-            <h2 className="text-lg font-bold text-slate-900">
-              {t("donorTitle")}
-            </h2>
-
-            <p className="mt-1 text-sm text-slate-500">{t("donorDesc")}</p>
-
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              <Input name="First Name" placeholder={t("firstName")} required />
-              <Input name="Last Name" placeholder={t("lastName")} required />
-            </div>
-
-            <div className="mt-4 space-y-4">
-              <Input
-                name="Bkash Transaction ID"
-                placeholder={t("trxId")}
-                required
+        {/* Main Card */}
+        <Card className="overflow-hidden rounded-[2rem] border-white/70 bg-white/85 shadow-2xl shadow-emerald-900/5 backdrop-blur-sm">
+          <CardContent className="p-6 sm:p-10">
+            <form
+              action="https://formsubmit.co/b5eb5e98de3df7c0deb3d195673410b2"
+              method="POST"
+              className="space-y-10"
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Donation Submission"
               />
 
-              <Input
-                name="Email"
-                type="email"
-                placeholder={t("email")}
-                required
+              <input type="hidden" name="_captcha" value="false" />
+
+              <input type="hidden" name="_template" value="table" />
+
+              <input
+                type="hidden"
+                name="_next"
+                value="http://localhost:3000/thank-you"
               />
-            </div>
-          </div>
 
-          <div>
-            <h2 className="text-lg font-bold text-slate-900">
-              {t("paymentTitle")}
-            </h2>
+              <input
+                type="hidden"
+                name="Donation Amount"
+                value={`BDT ${selectedAmount}`}
+              />
 
-            <p className="mt-1 text-sm text-slate-500">{t("paymentDesc")}</p>
+              {/* Donation Amount */}
+              <div>
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+                    <HeartHandshake className="h-5 w-5" />
+                  </div>
 
-            <Card className="mt-4 overflow-hidden border-white/70 bg-white/85 backdrop-blur-sm">
-              <div className="flex items-center justify-between border-b px-4 py-3">
-                <span className="text-sm font-semibold">
-                  {t("offlineDonation")}
-                </span>
-                <Settings className="h-4 w-4 text-slate-500" />
+                  <div>
+                    <h2 className="text-xl font-bold text-emerald-950">
+                      {t("amountTitle")}
+                    </h2>
+
+                    <p className="text-sm text-slate-500">{t("amountDesc")}</p>
+                  </div>
+                </div>
+
+                <label className="mb-3 block text-sm font-semibold text-slate-800">
+                  {t("amountLabel")} <span className="text-red-500">*</span>
+                </label>
+
+                <div className="grid grid-cols-3 gap-3">
+                  {amounts.map((amount) => (
+                    <button
+                      type="button"
+                      key={amount}
+                      onClick={() => setSelectedAmount(amount)}
+                      className={`rounded-2xl border px-4 py-4 text-sm font-bold transition-all duration-300 ${
+                        selectedAmount === amount
+                          ? "border-emerald-700 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white shadow-lg shadow-emerald-900/20"
+                          : "border-emerald-100 bg-white text-slate-700 hover:border-emerald-300 hover:bg-emerald-50"
+                      }`}
+                    >
+                      BDT {amount}
+                    </button>
+                  ))}
+                </div>
+
+                <Input
+                  type="number"
+                  name="Custom Amount"
+                  placeholder={t("customAmountPlaceholder")}
+                  className="mt-4 h-12 rounded-2xl border-emerald-100 bg-white/80 focus-visible:ring-emerald-600"
+                  onChange={(e) =>
+                    setSelectedAmount(Number(e.target.value || 0))
+                  }
+                />
               </div>
 
-              <CardContent className="p-5">
-                <div className="mb-5 rounded-xl bg-slate-50 p-4">
-                  <h3 className="mb-4 text-sm font-bold text-slate-900">
-                    {t("summaryTitle")}
-                  </h3>
+              {/* Donor Info */}
+              <div>
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+                    <ShieldCheck className="h-5 w-5" />
+                  </div>
 
-                  <div className="space-y-3 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-slate-500">
-                        {t("paymentAmount")}
-                      </span>
-                      <strong>BDT {selectedAmount.toFixed(2)}</strong>
-                    </div>
+                  <div>
+                    <h2 className="text-xl font-bold text-emerald-950">
+                      {t("donorTitle")}
+                    </h2>
 
-                    <div className="flex justify-between">
-                      <span className="text-slate-500">
-                        {t("givingFrequency")}
-                      </span>
-                      <strong>{t("oneTime")}</strong>
-                    </div>
-
-                    <div className="flex justify-between border-t pt-3">
-                      <span className="font-semibold">
-                        {t("donationTotal")}
-                      </span>
-                      <strong>BDT {selectedAmount.toFixed(2)}</strong>
-                    </div>
+                    <p className="text-sm text-slate-500">{t("donorDesc")}</p>
                   </div>
                 </div>
 
-                <div className="rounded-xl border border-emerald-100 bg-emerald-50/50 p-4 text-sm">
-                  <Badge className="mb-3 bg-emerald-600 text-white hover:bg-emerald-600">
-                    {t("forDonation")}
-                  </Badge>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Input
+                    name="First Name"
+                    placeholder={t("firstName")}
+                    required
+                    className="h-12 rounded-2xl border-emerald-100 bg-white/80 focus-visible:ring-emerald-600"
+                  />
 
-                  <div className="space-y-2 text-slate-700">
-                    <p>
-                      <b>{t("mobile")}:</b> 01774392665
-                    </p>
-                    <p>
-                      <b>{t("accountName")}:</b> Sabilul Huda Education
-                      Foundation
-                    </p>
-                    <p>
-                      <b>{t("accountNumber")}:</b> 0211120189118
-                    </p>
-                    <p>
-                      <b>{t("bank")}:</b> Al-Arafah Islami Bank PLC
-                    </p>
-                    <p>
-                      <b>{t("branch")}:</b> Mirpur-1 Branch, Dhaka-1216
-                    </p>
-                    <p>
-                      <b>{t("routingNo")}:</b> 015262983
-                    </p>
-                    <p>
-                      <b>{t("swiftCode")}:</b> ALARBDDH084
-                    </p>
+                  <Input
+                    name="Last Name"
+                    placeholder={t("lastName")}
+                    required
+                    className="h-12 rounded-2xl border-emerald-100 bg-white/80 focus-visible:ring-emerald-600"
+                  />
+                </div>
+
+                <div className="mt-4 space-y-4">
+                  <Input
+                    name="Bkash Transaction ID"
+                    placeholder={t("trxId")}
+                    required
+                    className="h-12 rounded-2xl border-emerald-100 bg-white/80 focus-visible:ring-emerald-600"
+                  />
+
+                  <Input
+                    name="Email"
+                    type="email"
+                    placeholder={t("email")}
+                    required
+                    className="h-12 rounded-2xl border-emerald-100 bg-white/80 focus-visible:ring-emerald-600"
+                  />
+                </div>
+              </div>
+
+              {/* Payment Info */}
+              <div>
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+                    <CreditCard className="h-5 w-5" />
+                  </div>
+
+                  <div>
+                    <h2 className="text-xl font-bold text-emerald-950">
+                      {t("paymentTitle")}
+                    </h2>
+
+                    <p className="text-sm text-slate-500">{t("paymentDesc")}</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
 
-          <Button
-            type="submit"
-            className="w-full bg-emerald-600 py-6 text-base font-bold hover:bg-emerald-700"
-          >
-            {t("submit")}
-          </Button>
-        </form>
+                <Card className="overflow-hidden rounded-3xl border-white/70 bg-white/80 backdrop-blur-sm">
+                  <div className="flex items-center justify-between border-b border-emerald-100 px-5 py-4">
+                    <span className="text-sm font-semibold text-emerald-950">
+                      {t("offlineDonation")}
+                    </span>
+
+                    <Settings className="h-4 w-4 text-slate-500" />
+                  </div>
+
+                  <CardContent className="space-y-5 p-5">
+                    {/* Summary */}
+                    <div className="rounded-2xl bg-slate-50 p-5">
+                      <h3 className="mb-4 text-sm font-bold text-slate-900">
+                        {t("summaryTitle")}
+                      </h3>
+
+                      <div className="space-y-3 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-slate-500">
+                            {t("paymentAmount")}
+                          </span>
+
+                          <strong>BDT {selectedAmount.toFixed(2)}</strong>
+                        </div>
+
+                        <div className="flex justify-between">
+                          <span className="text-slate-500">
+                            {t("givingFrequency")}
+                          </span>
+
+                          <strong>{t("oneTime")}</strong>
+                        </div>
+
+                        <div className="flex justify-between border-t pt-3 text-base">
+                          <span className="font-semibold">
+                            {t("donationTotal")}
+                          </span>
+
+                          <strong className="text-emerald-700">
+                            BDT {selectedAmount.toFixed(2)}
+                          </strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bank Info */}
+                    <div className="rounded-2xl border border-emerald-100 bg-emerald-50/60 p-5">
+                      <Badge className="mb-4 bg-emerald-600 text-white hover:bg-emerald-600">
+                        {t("forDonation")}
+                      </Badge>
+
+                      <div className="space-y-3 text-sm text-slate-700">
+                        <p>
+                          <b>{t("mobile")}:</b> 01774392665
+                        </p>
+
+                        <p>
+                          <b>{t("accountName")}:</b> Sabilul Huda Education
+                          Foundation
+                        </p>
+
+                        <p>
+                          <b>{t("accountNumber")}:</b> 0211120189118
+                        </p>
+
+                        <p>
+                          <b>{t("bank")}:</b> Al-Arafah Islami Bank PLC
+                        </p>
+
+                        <p>
+                          <b>{t("branch")}:</b> Mirpur-1 Branch, Dhaka-1216
+                        </p>
+
+                        <p>
+                          <b>{t("routingNo")}:</b> 015262983
+                        </p>
+
+                        <p>
+                          <b>{t("swiftCode")}:</b> ALARBDDH084
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Button */}
+              <div className="flex justify-center">
+                <Button
+                  type="submit"
+                  className="group relative h-12 overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 px-10 text-sm font-semibold text-white shadow-lg shadow-emerald-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-emerald-900/30"
+                >
+                  <span className="absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                  <span className="relative flex items-center gap-2">
+                    {t("submit")}
+
+                    <HandHeart className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                  </span>
+                </Button>
+              </div>
+            </form>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
