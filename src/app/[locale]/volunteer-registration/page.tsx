@@ -22,7 +22,7 @@ export default function VolunteerRegistrationPage() {
 
   return (
     <section className="py-16 lg:py-24">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-7xl px-4">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <Badge
             variant="outline"
