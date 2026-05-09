@@ -221,7 +221,7 @@ export default function CourseSection() {
           )}
         </div>
 
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <Button
             variant="outline"
             size="lg"
@@ -233,7 +233,7 @@ export default function CourseSection() {
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
