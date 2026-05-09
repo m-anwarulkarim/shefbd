@@ -196,23 +196,172 @@
   },
 
   "About": {
-    "badge": "About Us",
+    "badge": "About Organization",
     "title": "Sabilul Huda Education Foundation",
-    "description": "Sabilul Huda Education Foundation is a completely non-political, educational, dawah, self-purification, and humanitarian service organization. This foundation follows the ideal of the Prophet Muhammad (PBUH) — the messenger of peace and welfare for the world — providing services in Islamic culture promotion, social reform, employment creation, poverty alleviation, food distribution, educational project management, free or low-cost healthcare, building a clean mindset, and using modern media to call people towards the guidance of Allah and His Messenger, with the aim of building an ideal welfare society.",
-    "missionBadge": "Mission & Vision",
-    "missionTitle": "Mission & Vision",
-    "missionText": "In the light of the Prophet's (PBUH) life guidance, to establish a welfare society through education, dawah, self-purification, and service programs — this is the mission and vision of Sabilul Huda Education Foundation-SHEF.",
-    "activityBadge": "Our Activities",
-    "activityTitle": "Our Activities",
-    "activitySubtitle": "Sabilul Huda Education Foundation-SHEF primarily works in four sectors:",
+    "shortTitle": "SHEF",
+    "established": "Established: 2007",
+    "description": "Sabilul Huda Education Foundation is a completely non-political and non-profit service organization dedicated to education, dawah, spiritual purification, and humanitarian welfare. Following the noble example of Prophet Muhammad ﷺ, the organization works for humanitarian service, promotion of Islamic civilization, social reform, employment creation, poverty alleviation, relief distribution, educational projects, affordable or free healthcare, moral development, and calling people toward guidance through modern communication platforms.",
+
+    "missionBadge": "Mission & Objective",
+    "missionTitle": "Mission & Objective",
+    "missionText": "The mission and objective of SHEF is to establish a welfare-based society through education, dawah, spiritual purification, and service-oriented activities in light of the noble life example of Prophet Muhammad ﷺ.",
+
+    "activityBadge": "Activities",
+    "activityTitle": "Core Activities",
+    "activitySubtitle": "Sabilul Huda Education Foundation-SHEF primarily works in four sectors.",
     "activity1": "Education & Training",
     "activity2": "Dawah & Research",
-    "activity3": "Self-Purification",
+    "activity3": "Tazkiyah & Self-Purification",
     "activity4": "Humanitarian Service",
+
+    "policyBadge": "Policies",
+    "policyTitle": "Policies & Principles",
+    "policies": [
+      "SHEF is a completely non-political and non-profit service organization. Its activities have no connection with politics.",
+      "The organization serves people regardless of party, opinion, religion, or ethnicity.",
+      "The core areas of work are education and training, dawah and research, tazkiyah and self-purification, and humanitarian service.",
+      "The organization avoids disputes, conflicts, and divisions among communities and groups.",
+      "In Shariah matters, SHEF follows the widely accepted principles of Ahlus Sunnah wal Jama’ah.",
+      "SHEF maintains balanced relations with all Islamic organizations and communities without taking sides in conflicts.",
+      "The organization works to develop dialogue, humanity, generosity, brotherhood, and unity among different communities."
+    ],
+
+    "incomeBadge": "Sources of Income",
+    "incomeTitle": "Sources of Income",
+    "incomeSources": [
+      "Donations from founding members.",
+      "One-time and regular donations from members, supporters, and well-wishers.",
+      "Income from different SHEF projects.",
+      "Donations given by the public for specific causes.",
+      "Zakat, Fitrah, Sadaqah, and general donations.",
+      "Funds collected for Ramadan, Iftar, Qurbani, and special causes.",
+      "Government or non-government grants and financial support.",
+      "5-10% administrative cost deducted from relevant projects."
+    ],
+
+    "expenseBadge": "Spending Policy",
+    "expenseTitle": "Spending Policy",
+    "expensePolicies": [
+      "Donations are spent only in the cause specified by the donor.",
+      "Funds from one category are not spent in another category.",
+      "100% of Zakat funds are distributed among eligible recipients.",
+      "Detailed income and expense records are preserved after every project.",
+      "All income and expenses of SHEF are audited by a chartered accountant."
+    ],
+
+    "achievementBadge": "Achievements",
+    "achievementTitle": "Achievements",
+    "achievements": [
+      {
+        "title": "Education",
+        "description": "Under the supervision of SHEF, two separate madrasahs for boys and girls have been established in Kushtia. The organization has also initiated Islamic schools based on an integrated curriculum of general and Islamic education."
+      },
+      {
+        "title": "Dawah",
+        "description": "SHEF continues online and offline dawah activities among Bangla-speaking people. The organization also distributes books and leaflets related to dawah and tabligh."
+      },
+      {
+        "title": "Research",
+        "description": "The chairman of SHEF, Shaykh Dr. Shahidul Islam Faruqi, has authored several research works on important contemporary Islamic topics."
+      },
+      {
+        "title": "Iftar & Ramadan Food Distribution",
+        "description": "Every Ramadan, thousands of fasting people receive Iftar and food packs. So far, hundreds of thousands of fasting and needy people have benefited from SHEF."
+      },
+      {
+        "title": "Qurbani",
+        "description": "Every year during Qurbani, SHEF distributes sacrificial animals and meat among poor and helpless people. Nearly 1,000 cows/goats have been distributed so far."
+      },
+      {
+        "title": "Winter Clothing Distribution",
+        "description": "Every winter, SHEF distributes winter clothing in cold-prone areas. More than 20,000 winter clothing items have been distributed."
+      },
+      {
+        "title": "Rohingya Support",
+        "description": "SHEF has provided free medical camps, temporary shelters, tube wells, toilets, solar systems, and other support for Rohingya communities."
+      },
+      {
+        "title": "Tube Well Installation",
+        "description": "Under the Water for Life project, SHEF has installed more than 300 tube wells in remote areas of the country."
+      },
+      {
+        "title": "Food Distribution",
+        "description": "Food distribution among poverty-stricken people is one of SHEF’s ongoing projects. Since 2023, 1,000 needy families receive food baskets every year."
+      },
+      {
+        "title": "Relief Distribution",
+        "description": "Since its establishment, SHEF has been conducting relief activities in flood-affected districts."
+      },
+      {
+        "title": "Widow Support",
+        "description": "SHEF supports widows with cash, clothing, and income-generating resources. Many widows have received sewing machines."
+      },
+      {
+        "title": "Orphan Care",
+        "description": "SHEF takes responsibility for the education and care of orphan students in its managed madrasahs."
+      },
+      {
+        "title": "COVID-19 Support",
+        "description": "During the COVID-19 period, thousands of helpless and needy people benefited from SHEF’s support."
+      },
+      {
+        "title": "Healthcare",
+        "description": "SHEF regularly organizes free medical camps in different areas and provides financial assistance for poor and helpless patients."
+      }
+    ],
+
+    "researchBadge": "Research & Publications",
+    "researchTitle": "Research Books",
+    "researchSubtitle": "The chairman of SHEF, Shaykh Dr. Shahidul Islam Faruqi, has authored several research works on important contemporary Islamic topics.",
+    "books": [
+      "Maqasid al-Shariah",
+      "Orientalism",
+      "Globalization: A New Strategy of Imperialism",
+      "The Reality of Western Media",
+      "The Prophetic Method of Tazkiyah and Self-Purification"
+    ],
+
     "complexBadge": "Upcoming Project",
     "complexTitle": "Sabilul Huda Mosque Complex & Islamic Center",
-    "complexDesc": "Sabilul Huda Education Foundation-SHEF wants to build a Mosque Complex & Islamic Center as a center for all its welfare activities. From here, all education, dawah, self-purification, and service programs will be conducted nationwide.",
-    "complexFooter": "We seek everyone's cooperation in building this complex and center."
+    "complexDesc": "Sabilul Huda Education Foundation-SHEF wants to build a large Mosque Complex and Islamic Center as the central hub for all its welfare activities.",
+    "complexFooter": "We seek everyone’s cooperation in building this complex and center."
+  },
+
+  "Authority": {
+    "badge": "About Authority",
+    "title": "Advisory Council",
+    "subtitle": "A council formed with renowned Islamic scholars, researchers, and academics from home and abroad.",
+
+    "members": [
+      {
+        "name": "Shaykh Mahmudul Hasan",
+        "designation": "Chairman, Qawmi Madrasah Education Board, Bangladesh."
+      },
+      {
+        "name": "Shaykh Esa Mansuri",
+        "designation": "Chairman, World Islamic Forum, UK."
+      },
+      {
+        "name": "Professor Dr. Muhammad Abul Lais",
+        "designation": "Professor, International Islamic University Malaysia."
+      },
+      {
+        "name": "Shaykh Muhammad Salman",
+        "designation": "Rector, Madrasah Darur Rashad, Mirpur, Dhaka."
+      },
+      {
+        "name": "Sayyed Bilal Abdul Hai Hasani",
+        "designation": "Rector, Darul Ulum Nadwatul Ulama, India."
+      },
+      {
+        "name": "Shaykh Ishak Abdul Kader",
+        "designation": "President, Insaf Malaysia."
+      }
+    ],
+
+    "founderBadge": "Founder Chairman",
+    "founderName": "Shaykh Dr. Shahidul Islam Faruqi",
+    "founderDesignation": "PhD, International Islamic University Malaysia."
   },
 
   "Complex": {

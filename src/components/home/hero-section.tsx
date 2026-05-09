@@ -22,7 +22,7 @@ export default function HeroSection() {
   const t = useTranslations("Hero");
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-emerald-50/30">
+    <section className="relative w-full overflow-hidden py-16 lg:py-24">
       {/* Subtle dot pattern */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -39,7 +39,7 @@ export default function HeroSection() {
             {/* Gov Reg Badge */}
             <Badge
               variant="outline"
-              className="gap-2 border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700"
+              className="gap-2 border-emerald-200 bg-white/80 px-3 py-1.5 text-xs font-semibold text-emerald-700 backdrop-blur-sm"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />

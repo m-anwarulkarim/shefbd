@@ -11,7 +11,7 @@ export default function HowYouCanDonatePage() {
   const t = useTranslations("Donation");
 
   return (
-    <section className="bg-gradient-to-br from-emerald-50 via-white to-emerald-50/30 py-16 lg:py-24">
+    <section className="py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-10 text-center">
           <Badge
@@ -28,7 +28,7 @@ export default function HowYouCanDonatePage() {
 
         {/* Land & Construction Cost */}
         <div className="mb-10 grid gap-4 sm:grid-cols-2">
-          <Card className="border-emerald-200 bg-emerald-50/50">
+          <Card className="border-white/70 bg-white/80 backdrop-blur-sm">
             <CardContent className="flex items-center gap-4 p-5">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-100">
                 <MapPin className="h-5 w-5 text-emerald-700" />

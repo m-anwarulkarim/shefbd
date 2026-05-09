@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,15 +47,31 @@ export default async function LocaleLayout({
   return (
     <div
       className={`
-        ${geistSans.variable}
-        ${geistMono.variable}
-        ${hindSiliguri.variable}
-        font-sans
-      `}
+      ${geistSans.variable}
+      ${geistMono.variable}
+      ${hindSiliguri.variable}
+      font-sans
+    `}
     >
+      {/* Global Background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <Image
+          src="/background.png"
+          alt="Islamic Background"
+          fill
+          priority
+          sizes="100vw"
+          className=" opacity-75"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/85 via-white/80 to-emerald-50/75" />
+      </div>
+
       <NextIntlClientProvider locale={locale} messages={messages}>
         <Navbar />
-        {children}
+
+        <main className="relative z-10">{children}</main>
+
         <Footer />
       </NextIntlClientProvider>
     </div>

@@ -66,7 +66,7 @@ const projects = [
 
 export default function OngoingProjectsSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-emerald-50/40 to-white py-16 lg:py-24">
+    <section className="relative overflow-hidden py-16 lg:py-24">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.04]"
         style={{
@@ -100,7 +100,7 @@ export default function OngoingProjectsSection() {
           {projects.map((project) => (
             <Card
               key={project.title}
-              className="group overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-lg shadow-emerald-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-900/10 sm:rounded-3xl"
+              className="group overflow-hidden rounded-2xl border border-white/70 bg-white/85 backdrop-blur-sm  shadow-lg shadow-emerald-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-900/10 sm:rounded-3xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-emerald-50">
                 <Image

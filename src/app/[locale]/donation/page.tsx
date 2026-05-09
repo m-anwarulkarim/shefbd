@@ -14,7 +14,7 @@ export default function DonationPage() {
   const [selectedAmount, setSelectedAmount] = useState(10);
 
   return (
-    <section className="bg-white py-10">
+    <section className="py-10">
       <div className="mx-auto max-w-xl px-4">
         <div className="mb-8 text-center">
           <Badge className="mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-100">
@@ -134,7 +134,7 @@ export default function DonationPage() {
               How would you like to pay for your donation?
             </p>
 
-            <Card className="mt-4 overflow-hidden border-emerald-200">
+            <Card className="mt-4 overflow-hidden border-white/70 bg-white/85 backdrop-blur-sm">
               <div className="flex items-center justify-between border-b px-4 py-3">
                 <span className="text-sm font-semibold">
                   Donate with Offline Donation

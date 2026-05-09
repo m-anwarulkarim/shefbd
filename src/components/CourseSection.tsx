@@ -57,7 +57,7 @@ function CourseCard({
   t: ReturnType<typeof useTranslations>;
 }) {
   return (
-    <Card className="group relative h-full overflow-hidden rounded-3xl border border-emerald-100/80 bg-white p-0 shadow-xl shadow-emerald-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-900/10">
+    <Card className="group relative h-full overflow-hidden rounded-3xl border border-white/70 bg-white/85 backdrop-blur-sm p-0 shadow-xl shadow-emerald-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-900/10">
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-[28px] bg-white">
         <Image
           src={course.image}
@@ -187,9 +187,7 @@ export default function CourseSection() {
   const shouldUseDesktopSlider = courses.length > 3;
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-16 lg:py-24">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-emerald-50/50 via-transparent to-emerald-50/30" />
-
+    <section className="relative w-full overflow-hidden py-16 lg:py-24">
       <div className="relative mx-auto max-w-7xl px-4">
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <Badge

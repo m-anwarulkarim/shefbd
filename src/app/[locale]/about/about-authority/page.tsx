@@ -1,10 +1,5 @@
-import WebsiteWorkingNotice from "@/components/WebsiteWorkingNotice";
-import React from "react";
+import ShefAboutAuthority from "@/components/about/ShefAboutAuthority";
 
 export default function AboutAuthorityPage() {
-  return (
-    <div>
-      <WebsiteWorkingNotice />
-    </div>
-  );
+  return <ShefAboutAuthority />;
 }

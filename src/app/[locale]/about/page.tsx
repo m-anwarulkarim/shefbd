@@ -27,15 +27,16 @@ export default function AboutPage() {
 
   return (
     <div className="relative w-full overflow-hidden">
-      {/* ── Section 1: About SHEF ── */}
-      <section className="relative bg-gradient-to-br from-emerald-50 via-white to-emerald-50/30 py-16 lg:py-24">
+      <section className="relative py-16 lg:py-24">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: `radial-gradient(circle, #059669 1px, transparent 1px)`,
+            backgroundImage:
+              "radial-gradient(circle, #059669 1px, transparent 1px)",
             backgroundSize: "20px 20px",
           }}
         />
+
         <div className="relative mx-auto max-w-6xl px-4">
           <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="flex justify-center lg:col-span-4">
@@ -51,6 +52,7 @@ export default function AboutPage() {
                 />
               </div>
             </div>
+
             <div className="space-y-5 lg:col-span-8">
               <Badge
                 variant="outline"
@@ -59,10 +61,13 @@ export default function AboutPage() {
                 <Building2 className="h-3.5 w-3.5" />
                 {t("badge")}
               </Badge>
+
               <h1 className="text-3xl font-extrabold tracking-tight text-emerald-950 sm:text-4xl">
                 {t("title")}
               </h1>
+
               <Separator className="bg-emerald-200" />
+
               <p className="text-base leading-[1.8] text-slate-600">
                 {t("description")}
               </p>
@@ -71,8 +76,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Section 2: Mission & Vision ── */}
-      <section className="bg-white py-16 lg:py-20">
+      <section className="py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mx-auto max-w-3xl text-center">
             <Badge
@@ -82,10 +86,13 @@ export default function AboutPage() {
               <Star className="h-3.5 w-3.5" />
               {t("missionBadge")}
             </Badge>
+
             <h2 className="text-3xl font-extrabold tracking-tight text-emerald-950 sm:text-4xl">
               {t("missionTitle")}
             </h2>
+
             <Separator className="mx-auto my-6 w-24 bg-emerald-300" />
+
             <p className="text-base leading-[1.8] text-slate-600">
               {t("missionText")}
             </p>
@@ -93,8 +100,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Section 3: Activities ── */}
-      <section className="bg-gradient-to-b from-emerald-50/50 to-white py-16 lg:py-20">
+      <section className="py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mb-10 text-center">
             <Badge

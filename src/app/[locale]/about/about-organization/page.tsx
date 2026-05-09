@@ -1,10 +1,6 @@
-import WebsiteWorkingNotice from "@/components/WebsiteWorkingNotice";
-import React from "react";
+import ShefAboutOrganization from "@/components/about/ShefAboutOrganization";
+// import ShefAboutPremium from "@/components/about/shef-about";
 
-export default function AboutOrganizationPage() {
-  return (
-    <div>
-      <WebsiteWorkingNotice />
-    </div>
-  );
+export default function AboutPage() {
+  return <ShefAboutOrganization />;
 }
