@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { HandHeart, Settings } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +12,7 @@ import { Button } from "@/components/ui/button";
 const amounts = [10, 25, 50, 100, 250, 500];
 
 export default function DonationPage() {
+  const t = useTranslations("DonationForm");
   const [selectedAmount, setSelectedAmount] = useState(10);
 
   return (
@@ -19,17 +21,14 @@ export default function DonationPage() {
         <div className="mb-8 text-center">
           <Badge className="mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-100">
             <HandHeart className="mr-1 h-3.5 w-3.5" />
-            Donate
+            {t("badge")}
           </Badge>
 
           <h1 className="text-3xl font-extrabold text-slate-900">
-            Support Our Mission
+            {t("title")}
           </h1>
 
-          <p className="mt-2 text-sm text-slate-500">
-            Your donation helps us continue educational, humanitarian and dawah
-            activities.
-          </p>
+          <p className="mt-2 text-sm text-slate-500">{t("subtitle")}</p>
         </div>
 
         <form
@@ -57,16 +56,13 @@ export default function DonationPage() {
 
           <div>
             <h2 className="mb-2 text-lg font-bold text-slate-900">
-              How much would you like to donate today?
+              {t("amountTitle")}
             </h2>
 
-            <p className="mb-5 text-sm text-slate-500">
-              All donations directly impact our organization and help us further
-              our mission.
-            </p>
+            <p className="mb-5 text-sm text-slate-500">{t("amountDesc")}</p>
 
             <label className="mb-3 block text-sm font-semibold text-slate-800">
-              Donation Amount <span className="text-red-500">*</span>
+              {t("amountLabel")} <span className="text-red-500">*</span>
             </label>
 
             <div className="grid grid-cols-3 gap-3">
@@ -89,7 +85,7 @@ export default function DonationPage() {
             <Input
               type="number"
               name="Custom Amount"
-              placeholder="Enter custom amount"
+              placeholder={t("customAmountPlaceholder")}
               className="mt-3"
               onChange={(e) => setSelectedAmount(Number(e.target.value || 0))}
             />
@@ -97,29 +93,27 @@ export default function DonationPage() {
 
           <div>
             <h2 className="text-lg font-bold text-slate-900">
-              Who&apos;s Giving Today?
+              {t("donorTitle")}
             </h2>
 
-            <p className="mt-1 text-sm text-slate-500">
-              We&apos;ll never share this information with anyone.
-            </p>
+            <p className="mt-1 text-sm text-slate-500">{t("donorDesc")}</p>
 
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              <Input name="First Name" placeholder="First name" required />
-              <Input name="Last Name" placeholder="Last name" required />
+              <Input name="First Name" placeholder={t("firstName")} required />
+              <Input name="Last Name" placeholder={t("lastName")} required />
             </div>
 
             <div className="mt-4 space-y-4">
               <Input
                 name="Bkash Transaction ID"
-                placeholder="Bkash Transaction ID"
+                placeholder={t("trxId")}
                 required
               />
 
               <Input
                 name="Email"
                 type="email"
-                placeholder="Email Address"
+                placeholder={t("email")}
                 required
               />
             </div>
@@ -127,17 +121,15 @@ export default function DonationPage() {
 
           <div>
             <h2 className="text-lg font-bold text-slate-900">
-              Payment Details
+              {t("paymentTitle")}
             </h2>
 
-            <p className="mt-1 text-sm text-slate-500">
-              How would you like to pay for your donation?
-            </p>
+            <p className="mt-1 text-sm text-slate-500">{t("paymentDesc")}</p>
 
             <Card className="mt-4 overflow-hidden border-white/70 bg-white/85 backdrop-blur-sm">
               <div className="flex items-center justify-between border-b px-4 py-3">
                 <span className="text-sm font-semibold">
-                  Donate with Offline Donation
+                  {t("offlineDonation")}
                 </span>
                 <Settings className="h-4 w-4 text-slate-500" />
               </div>
@@ -145,22 +137,28 @@ export default function DonationPage() {
               <CardContent className="p-5">
                 <div className="mb-5 rounded-xl bg-slate-50 p-4">
                   <h3 className="mb-4 text-sm font-bold text-slate-900">
-                    Donation Summary
+                    {t("summaryTitle")}
                   </h3>
 
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-slate-500">Payment Amount</span>
+                      <span className="text-slate-500">
+                        {t("paymentAmount")}
+                      </span>
                       <strong>BDT {selectedAmount.toFixed(2)}</strong>
                     </div>
 
                     <div className="flex justify-between">
-                      <span className="text-slate-500">Giving Frequency</span>
-                      <strong>One time</strong>
+                      <span className="text-slate-500">
+                        {t("givingFrequency")}
+                      </span>
+                      <strong>{t("oneTime")}</strong>
                     </div>
 
                     <div className="flex justify-between border-t pt-3">
-                      <span className="font-semibold">Donation Total</span>
+                      <span className="font-semibold">
+                        {t("donationTotal")}
+                      </span>
                       <strong>BDT {selectedAmount.toFixed(2)}</strong>
                     </div>
                   </div>
@@ -168,30 +166,31 @@ export default function DonationPage() {
 
                 <div className="rounded-xl border border-emerald-100 bg-emerald-50/50 p-4 text-sm">
                   <Badge className="mb-3 bg-emerald-600 text-white hover:bg-emerald-600">
-                    For Donation
+                    {t("forDonation")}
                   </Badge>
 
                   <div className="space-y-2 text-slate-700">
                     <p>
-                      <b>bKash/Nagad:</b> 01774392665
+                      <b>{t("mobile")}:</b> 01774392665
                     </p>
                     <p>
-                      <b>Account Name:</b> Sabilul Huda Education Foundation
+                      <b>{t("accountName")}:</b> Sabilul Huda Education
+                      Foundation
                     </p>
                     <p>
-                      <b>Account Number:</b> 0211120189118
+                      <b>{t("accountNumber")}:</b> 0211120189118
                     </p>
                     <p>
-                      <b>Bank:</b> Al-Arafah Islami Bank PLC
+                      <b>{t("bank")}:</b> Al-Arafah Islami Bank PLC
                     </p>
                     <p>
-                      <b>Branch:</b> Mirpur-1 Branch, Dhaka-1216
+                      <b>{t("branch")}:</b> Mirpur-1 Branch, Dhaka-1216
                     </p>
                     <p>
-                      <b>Routing No:</b> 015262983
+                      <b>{t("routingNo")}:</b> 015262983
                     </p>
                     <p>
-                      <b>Swift Code:</b> ALARBDDH084
+                      <b>{t("swiftCode")}:</b> ALARBDDH084
                     </p>
                   </div>
                 </div>
@@ -203,7 +202,7 @@ export default function DonationPage() {
             type="submit"
             className="w-full bg-emerald-600 py-6 text-base font-bold hover:bg-emerald-700"
           >
-            Donate now
+            {t("submit")}
           </Button>
         </form>
       </div>

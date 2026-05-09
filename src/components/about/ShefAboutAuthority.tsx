@@ -25,19 +25,6 @@ export default function ShefAboutAuthority() {
 
   return (
     <section className="relative isolate overflow-hidden py-14 md:py-20">
-      <div className="fixed inset-0 -z-10">
-        <Image
-          src="/background.png"
-          alt="Islamic Arabic calligraphy background"
-          fill
-          priority
-          sizes="100vw"
-          className=" opacity-100"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/90 via-white/86 to-emerald-50/88" />
-      </div>
-
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-10 text-center">
           <Badge className="mb-4 bg-emerald-700 text-white hover:bg-emerald-700">

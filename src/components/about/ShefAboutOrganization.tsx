@@ -68,18 +68,6 @@ export default function ShefAboutOrganization() {
 
   return (
     <main className="relative isolate overflow-hidden text-slate-900">
-      <div className="fixed inset-0 -z-10">
-        <Image
-          src="/background.png"
-          alt="Islamic Arabic calligraphy background"
-          fill
-          priority
-          sizes="100vw"
-          className=" opacity-100"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/90 via-white/86 to-emerald-50/88" />
-      </div>
-
       <section className="relative overflow-hidden border-b border-emerald-100/60 py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 lg:grid-cols-[0.8fr_1.2fr]">
           <Card className="rounded-3xl border-white/70 bg-white/75 shadow-xl backdrop-blur-md">
