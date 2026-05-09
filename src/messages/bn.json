@@ -444,6 +444,30 @@
     "submit": "এখনই দান করুন"
   },
 
+  "ContactPage": {
+    "badge": "যোগাযোগ",
+    "title": "আমাদের সাথে যোগাযোগ করুন",
+    "subtitle": "আপনার প্রশ্ন, পরামর্শ অথবা সহযোগিতার জন্য নিচের ফর্মটি পূরণ করুন।",
+    "formTitle": "যোগাযোগের ফর্ম",
+    "nameLabel": "আপনার নাম",
+    "namePlaceholder": "আপনার নাম",
+    "emailLabel": "ই-মেইল",
+    "emailPlaceholder": "ই-মেইল",
+    "subjectLabel": "যোগাযোগের বিষয়",
+    "subjectPlaceholder": "যোগাযোগের বিষয়",
+    "messageLabel": "বার্তা",
+    "messagePlaceholder": "বার্তা",
+    "submit": "প্রেরণ করুন",
+    "mapTitle": "আমাদের ঠিকানা",
+    "detailsTitle": "বিস্তারিত ঠিকানা",
+    "address": "১০/সি, ১৩/১২, মিরপুর, পল্লবী, ঢাকা-১২১৬",
+    "email": "info@shefbd.org",
+    "phone": "01774392665, 01315624853",
+    "addressTitle": "ঠিকানা",
+    "emailTitle": "ই-মেইল",
+    "phoneTitle": "মোবাইল"
+  },
+
   "Footer": {
     "orgName": "শেফ",
     "orgFullName": "সবিলুল হুদা এডুকেশন ফাউন্ডেশন",

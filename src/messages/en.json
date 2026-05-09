@@ -435,6 +435,30 @@
     "submit": "Donate now"
   },
 
+  "ContactPage": {
+    "badge": "Contact",
+    "title": "Contact Us",
+    "subtitle": "Fill out the form below for any questions, suggestions, or support.",
+    "formTitle": "Contact Form",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Subject",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Message",
+    "submit": "Send Message",
+    "mapTitle": "Our Location",
+    "detailsTitle": "Contact Details",
+    "address": "10/C, 13/12, Mirpur, Pallabi, Dhaka-1216",
+    "email": "info@shefbd.org",
+    "phone": "01774392665, 01315624853",
+    "addressTitle": "Address",
+    "emailTitle": "Email",
+    "phoneTitle": "Phone"
+  },
+
   "Footer": {
     "orgName": "SHEF",
     "orgFullName": "Sabilul Huda Education Foundation",
