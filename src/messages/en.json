@@ -535,6 +535,30 @@
     "goToForm": "Go to Form"
   },
 
+  "Volunteer": {
+    "badge": "Volunteer Registration",
+    "title": "Join Our Humanitarian Work as a Volunteer",
+    "subtitle": "Fill out the form below to participate in Sabilul Huda Education Foundation’s educational, dawah, and humanitarian activities.",
+    "personalInfo": "Personal Information",
+    "permanentAddress": "Permanent Address",
+    "presentAddress": "Present Address",
+    "name": "Name",
+    "probashi": "Probashi",
+    "phone": "Phone Number",
+    "email": "Email",
+    "facebook": "Facebook ID Link",
+    "nid": "NID Number",
+    "education": "Educational Information",
+    "occupation": "Occupation",
+    "volunteerFor": "Volunteer For",
+    "specialSkill": "Special Skill",
+    "districtThana": "District / Thana",
+    "districtPlaceholder": "Select District / Thana",
+    "address": "Address",
+    "requiredNote": "* Marked fields are mandatory, others are optional.",
+    "submit": "Send My Application"
+  },
+
   "Footer": {
     "orgName": "SHEF",
     "orgFullName": "Sabilul Huda Education Foundation",
