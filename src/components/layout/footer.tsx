@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, ArrowRight, Clock } from "lucide-react";
 import { CiFacebook } from "react-icons/ci";
-import { FiYoutube, FiInstagram } from "react-icons/fi";
 import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
@@ -33,18 +32,18 @@ export default function Footer() {
   const socialLinks = [
     {
       icon: <CiFacebook className="h-5 w-5" />,
-      href: "#",
+      href: "https://www.facebook.com/share/1J3tTLhwUP/",
       label: "Facebook",
     },
     {
-      icon: <FiYoutube className="h-5 w-5" />,
-      href: "#",
-      label: "Youtube",
+      icon: <Mail className="h-5 w-5" />,
+      href: "shefngo@gmail.com ",
+      label: "emaile",
     },
     {
-      icon: <FiInstagram className="h-5 w-5" />,
-      href: "#",
-      label: "Instagram",
+      icon: <Phone className="h-5 w-5" />,
+      href: "tel:+8801774392665",
+      label: "Phone",
     },
   ];
 
@@ -160,7 +159,7 @@ export default function Footer() {
                     <Phone className="h-4 w-4 text-emerald-400/70" />
                   </div>
                   <Link
-                    href="tel:+8801000000000"
+                    href="tel:+8801774392665"
                     className="text-sm text-white/50 transition hover:text-white"
                   >
                     {t("phone")}
@@ -171,7 +170,7 @@ export default function Footer() {
                     <Mail className="h-4 w-4 text-emerald-400/70" />
                   </div>
                   <Link
-                    href="mailto:info@shef.org"
+                    href="shefngo@gmail.com "
                     className="text-sm text-white/50 transition hover:text-white"
                   >
                     {t("email")}
@@ -219,25 +218,25 @@ export default function Footer() {
             Copyright © {new Date().getFullYear()} Sabilul Huda Education
             Foundation- all rights reserved. Made by{" "}
             <Link
-              href="https://modernwebsolutions.com"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-emerald-400 transition hover:text-emerald-300"
             >
-              Modern Web Solutions
+              Sabilul Huda Web team
             </Link>
             .
           </p>
 
           <div className="flex items-center gap-4">
             <Link
-              href="/privacy"
+              href="#"
               className="text-xs text-white/40 transition hover:text-white/70"
             >
               {t("privacy")}
             </Link>
             <Link
-              href="/terms"
+              href="#"
               className="text-xs text-white/40 transition hover:text-white/70"
             >
               {t("terms")}

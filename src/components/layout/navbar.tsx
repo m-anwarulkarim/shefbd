@@ -311,7 +311,7 @@ export default function Navbar() {
 
             <div className="flex items-center gap-2.5">
               <Link
-                href="#"
+                href="https://www.facebook.com/share/1J3tTLhwUP/"
                 aria-label="Facebook"
                 className="rounded-full p-1 text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white"
               >
@@ -319,15 +319,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="#"
-                aria-label="Youtube"
-                className="rounded-full p-1 text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white"
-              >
-                <FiYoutube className="h-4 w-4" />
-              </Link>
-
-              <Link
-                href="mailto:info@example.com"
+                href="shefngo@gmail.com "
                 aria-label="Email"
                 className="rounded-full p-1 text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white"
               >
@@ -335,7 +327,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="tel:+8801000000000"
+                href="tel:+8801774392665"
                 aria-label="Phone"
                 className="rounded-full p-1 text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white"
               >
