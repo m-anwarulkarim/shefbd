@@ -25,6 +25,7 @@ import {
   Users,
   ScrollText,
 } from "lucide-react";
+import ProjectMosqueComplexPage from "../ProjectMosqueComplexSection";
 
 const activityIcons = [BookOpen, Sparkles, Landmark, HeartHandshake];
 
@@ -278,26 +279,7 @@ export default function ShefAboutOrganization() {
           </Card>
         </div>
       </section>
-
-      <section className="px-4 pb-16 md:pb-24">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-white/70 bg-white/75 p-8 text-center shadow-xl backdrop-blur-md sm:p-12">
-          <Badge className="mb-4 bg-emerald-700 text-white hover:bg-emerald-700">
-            {t("complexBadge")}
-          </Badge>
-
-          <h2 className="text-3xl font-extrabold text-emerald-950 md:text-4xl">
-            {t("complexTitle")}
-          </h2>
-
-          <p className="mx-auto mt-4 max-w-3xl leading-8 text-slate-700">
-            {t("complexDesc")}
-          </p>
-
-          <p className="mx-auto mt-3 max-w-2xl leading-8 text-slate-600">
-            {t("complexFooter")}
-          </p>
-        </div>
-      </section>
+      <ProjectMosqueComplexPage />
     </main>
   );
 }

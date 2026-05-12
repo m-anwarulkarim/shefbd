@@ -10,7 +10,6 @@ import Link from "next/link";
 
 import { Mail, Phone, Menu, ChevronDown, X } from "lucide-react";
 
-import { FiYoutube } from "react-icons/fi";
 import { CiFacebook } from "react-icons/ci";
 
 /* ──────────────────────────── Types ──────────────────────────── */
@@ -275,7 +274,7 @@ export default function Navbar() {
 
     {
       label: t("ongoingProjects"),
-      href: "/projects",
+      href: "/ongoing-projects",
     },
 
     {
@@ -319,7 +318,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="shefngo@gmail.com "
+                href="shefngo@gmail.com"
                 aria-label="Email"
                 className="rounded-full p-1 text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white"
               >
