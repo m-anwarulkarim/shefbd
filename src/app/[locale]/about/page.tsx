@@ -100,7 +100,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-20">
+      {/* <section className="py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mb-10 text-center">
             <Badge
@@ -139,7 +139,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
