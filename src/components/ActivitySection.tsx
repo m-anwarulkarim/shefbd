@@ -1,16 +1,35 @@
 "use client";
 
+import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { BookOpen, Microscope, HeartHandshake, Sparkles } from "lucide-react";
+import {
+  BookOpen,
+  Microscope,
+  HeartHandshake,
+  Sparkles,
+  ArrowUpRight,
+} from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-const activityIcons = [
-  <BookOpen key="1" className="h-5 w-5" />,
-  <Microscope key="2" className="h-5 w-5" />,
-  <Sparkles key="3" className="h-5 w-5" />,
-  <HeartHandshake key="4" className="h-5 w-5" />,
+const activities = [
+  {
+    icon: <BookOpen className="h-5 w-5" />,
+    href: "/activities/education",
+  },
+  {
+    icon: <Microscope className="h-5 w-5" />,
+    href: "/activities/dawah",
+  },
+  {
+    icon: <Sparkles className="h-5 w-5" />,
+    href: "/activities/self-purification",
+  },
+  {
+    icon: <HeartHandshake className="h-5 w-5" />,
+    href: "/activities/service-of-humanity",
+  },
 ];
 
 export default function ActivitySection() {
@@ -38,18 +57,24 @@ export default function ActivitySection() {
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-          {[1, 2, 3, 4].map((i) => (
-            <Card key={i}>
-              <CardContent className="flex min-h-[150px] flex-col items-center justify-center gap-3 p-4 text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
-                  {activityIcons[i - 1]}
-                </div>
+          {activities.map((activity, index) => (
+            <Link key={index} href={activity.href} className="group block">
+              <Card className="h-full overflow-hidden border border-emerald-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-100/60">
+                <CardContent className="relative flex min-h-[170px] flex-col items-center justify-center gap-3 p-4 text-center">
+                  <div className="absolute right-3 top-3 rounded-full bg-emerald-50 p-1 text-emerald-500 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </div>
 
-                <h3 className="text-xs font-bold leading-relaxed text-emerald-950 sm:text-sm">
-                  {t(`activity${i}`)}
-                </h3>
-              </CardContent>
-            </Card>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700 transition-all duration-300 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white">
+                    {activity.icon}
+                  </div>
+
+                  <h3 className="text-xs font-bold leading-relaxed text-emerald-950 sm:text-sm">
+                    {t(`activity${index + 1}`)}
+                  </h3>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
