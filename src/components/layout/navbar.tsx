@@ -244,17 +244,17 @@ export default function Navbar() {
     },
   ];
 
-  const gallery = [
-    {
-      label: t("photoGallery"),
-      href: "/gallery/photos",
-    },
+  // const gallery = [
+  //   {
+  //     label: t("photoGallery"),
+  //     href: "/gallery/photos",
+  //   },
 
-    {
-      label: t("videoGallery"),
-      href: "/gallery/videos",
-    },
-  ];
+  //   {
+  //     label: t("videoGallery"),
+  //     href: "/gallery/videos",
+  //   },
+  // ];
 
   /* ──────────────────────────── Navigation ──────────────────────────── */
 
@@ -291,7 +291,7 @@ export default function Navbar() {
     {
       label: t("gallery"),
       href: "/gallery",
-      dropdown: gallery,
+      // dropdown: gallery,
     },
 
     {
