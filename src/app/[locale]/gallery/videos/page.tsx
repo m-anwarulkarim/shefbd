@@ -6,32 +6,8 @@ import { PlayCircle, Video, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { videos } from "../data/video";
 
-const videos = [
-  {
-    title: "ইনসানিয়াত দস্তরখানের মানবিক খাবার বিতরণ কার্যক্রম",
-    description:
-      "ইনসানিয়াত দস্তরখান উদ্যোগের মাধ্যমে ছিন্নমূল, অসহায় ও সুবিধাবঞ্চিত মানুষের মাঝে নিয়মিত খাবার বিতরণ করা হয়েছে। মানবতার সেবায় পরিচালিত এই কার্যক্রম সমাজের অবহেলিত মানুষের মুখে হাসি ফোটাতে এবং তাদের পাশে দাঁড়ানোর একটি আন্তরিক প্রচেষ্টা।",
-    thumbnail: "https://img.youtube.com/vi/Vx4GzOK7Wwg/maxresdefault.jpg",
-    embed: "https://www.youtube.com/embed/Vx4GzOK7Wwg",
-  },
-
-  {
-    title: "মানবতার স্পর্শে খাবার বিতরণ কর্মসূচি",
-    description:
-      "ইনসানিয়াত দস্তরখান প্রকল্পের আওতায় মিরপুর-৬ এলাকার বস্তিবাসী ও ছিন্নমূল শিশুদের মাঝে নিয়মিত খাবার বিতরণ করা হয়েছে। এই উদ্যোগের মাধ্যমে সুবিধাবঞ্চিত মানুষের পাশে দাঁড়িয়ে মানবিক সহায়তা ও ভালোবাসা পৌঁছে দেওয়ার প্রচেষ্টা অব্যাহত রয়েছে। ১১ এপ্রিল ২০২৬, শনিবার — মিরপুর-৬, ঢাকা।",
-    thumbnail: "/thm-1.png",
-    embed: "https://www.youtube.com/embed/K1hiKUZEHyY",
-  },
-
-  {
-    title: "ইনসানিয়াত দস্তরখানের উদ্যোগে ছিন্নমূল শিশুদের মাঝে খাবার বিতরণ",
-    description:
-      "সাবীলুল হুদা এডুকেশন ফাউন্ডেশন - Sabilul Huda Education Foundation ও পয়ামে ইনসানিয়াত বাংলাদেশ এর মানবিক প্রকল্প ‘ইনসানিয়াত দস্তরখান’-এর উদ্যোগে মিরপুর-৬ ঝিলপাড় বস্তির মক্তবের দুস্থ, অসহায় ও ছিন্নমূল শিশুদের মাঝে খাবার বিতরণ করা হয়েছে। মানবিক এই আয়োজনের মাধ্যমে সুবিধাবঞ্চিত শিশুদের মুখে হাসি ফোটানো এবং তাদের পাশে দাঁড়ানোর আন্তরিক প্রচেষ্টা অব্যাহত রয়েছে। ২৮ মার্চ ২০২৬, শনিবার — মিরপুর-৬, ঢাকা।",
-    thumbnail: "/thum-3.png",
-    embed: "https://www.youtube.com/embed/hFGE0UxIquI?si=dQuSxXwjWomVNB2C",
-  },
-];
 export default function VideoGalleryPage() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 

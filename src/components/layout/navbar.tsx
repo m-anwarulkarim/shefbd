@@ -11,6 +11,7 @@ import Link from "next/link";
 import { Mail, Phone, Menu, ChevronDown, X } from "lucide-react";
 
 import { CiFacebook } from "react-icons/ci";
+import { FaYoutube } from "react-icons/fa";
 
 /* ──────────────────────────── Types ──────────────────────────── */
 
@@ -316,7 +317,13 @@ export default function Navbar() {
               >
                 <CiFacebook className="h-4 w-4" />
               </Link>
-
+              <Link
+                href="https://youtube.com/@shef.oficial?si=ctZOq101KWWhbvqQ"
+                aria-label="Youtube"
+                className="rounded-full p-1 text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white"
+              >
+                <FaYoutube className="h-4 w-4" />
+              </Link>
               <Link
                 href="shefngo@gmail.com"
                 aria-label="Email"
