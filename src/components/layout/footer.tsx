@@ -4,31 +4,31 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, ArrowRight, Clock } from "lucide-react";
 import { CiFacebook } from "react-icons/ci";
-import { useTranslations } from "next-intl";
+import { BsYoutube } from "react-icons/bs";
 
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import { Input } from "../ui/input";
-import { BsYoutube } from "react-icons/bs";
 
 /* ─────────────────────── Footer ─────────────────────── */
 export default function Footer() {
-  const t = useTranslations("Footer");
-
   const quickLinks = [
-    { label: t("home"), href: "/" },
-    { label: t("aboutUs"), href: "/about" },
-    { label: t("ourActivities"), href: "/activities" },
-    { label: t("ongoingProjects"), href: "/ongoing-projects" },
-    { label: t("gallery"), href: "/gallery" },
-    { label: t("contact"), href: "/contact" },
+    { label: "হোম", href: "/" },
+    { label: "আমাদের সম্পর্কে", href: "/about" },
+    { label: "আমাদের কার্যক্রম", href: "/activities" },
+    { label: "চলমান প্রকল্প", href: "/ongoing-projects" },
+    { label: "গ্যালারি", href: "/gallery" },
+    { label: "যোগাযোগ", href: "/contact" },
   ];
 
   const supportLinks = [
-    { label: t("donorMember"), href: "/donor-member" },
-    { label: t("volunteerRegistration"), href: "/volunteer-registration" },
-    { label: t("donate"), href: "/donation" },
-    { label: t("video"), href: "/video" },
+    { label: "দাতা সদস্য হোন", href: "/donor-member" },
+    {
+      label: "স্বেচ্ছাসেবক নিবন্ধন",
+      href: "/volunteer-registration",
+    },
+    { label: "দান করুন", href: "/donation" },
+    { label: "ভিডিও গ্যালারি", href: "/video" },
   ];
 
   const socialLinks = [
@@ -44,8 +44,8 @@ export default function Footer() {
     },
     {
       icon: <Mail className="h-5 w-5" />,
-      href: "shefngo@gmail.com ",
-      label: "emaile",
+      href: "mailto:shefngo@gmail.com",
+      label: "Email",
     },
     {
       icon: <Phone className="h-5 w-5" />,
@@ -81,17 +81,19 @@ export default function Footer() {
 
               <div>
                 <h3 className="text-lg font-extrabold tracking-tight text-white">
-                  {t("orgName")}
+                  SHEF
                 </h3>
 
                 <p className="text-[11px] font-medium tracking-wide text-emerald-400/80">
-                  {t("orgFullName")}
+                  সাবীলুল হুদা এডুকেশন ফাউন্ডেশন
                 </p>
               </div>
             </Link>
 
             <p className="max-w-xs text-sm leading-relaxed text-white/50">
-              {t("description")}
+              ২০০৭ সাল থেকে শিক্ষা, মানবিক সহায়তা, স্বাস্থ্যসেবা ও সামাজিক
+              উন্নয়নের মাধ্যমে অসহায় মানুষের পাশে কাজ করে যাচ্ছে সাবীলুল হুদা
+              এডুকেশন ফাউন্ডেশন।
             </p>
 
             {/* Social Links */}
@@ -114,7 +116,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="lg:col-span-2">
             <h4 className="mb-4 text-xs font-bold uppercase tracking-widest text-emerald-400">
-              {t("quickLinks")}
+              দ্রুত লিংক
             </h4>
 
             <ul className="space-y-2.5">
@@ -135,7 +137,7 @@ export default function Footer() {
           {/* Support */}
           <div className="lg:col-span-2">
             <h4 className="mb-4 text-xs font-bold uppercase tracking-widest text-emerald-400">
-              {t("support")}
+              যুক্ত হোন
             </h4>
 
             <ul className="space-y-2.5">
@@ -157,7 +159,7 @@ export default function Footer() {
           <div className="space-y-6 lg:col-span-4">
             <div>
               <h4 className="mb-4 text-xs font-bold uppercase tracking-widest text-emerald-400">
-                {t("contactUs")}
+                যোগাযোগ করুন
               </h4>
 
               <ul className="space-y-3">
@@ -167,7 +169,7 @@ export default function Footer() {
                   </div>
 
                   <span className="text-sm leading-relaxed text-white/50">
-                    {t("address")}
+                    ঢাকা বিভাগের মিরপুর-১, আল-আরাফাহ ইসলামী ব্যাংক সংলগ্ন।
                   </span>
                 </li>
 
@@ -180,7 +182,7 @@ export default function Footer() {
                     href="tel:+8801774392665"
                     className="text-sm text-white/50 transition hover:text-white"
                   >
-                    {t("phone")}
+                    +৮৮০ ১৭৭৪-৩৯২৬৬৫
                   </Link>
                 </li>
 
@@ -190,10 +192,10 @@ export default function Footer() {
                   </div>
 
                   <Link
-                    href="shefngo@gmail.com "
+                    href="mailto:shefngo@gmail.com"
                     className="text-sm text-white/50 transition hover:text-white"
                   >
-                    {t("email")}
+                    shefngo@gmail.com
                   </Link>
                 </li>
 
@@ -203,7 +205,7 @@ export default function Footer() {
                   </div>
 
                   <span className="text-sm text-white/50">
-                    {t("officeHours")}
+                    শনিবার - বৃহস্পতিবার | সকাল ৯:০০ টা - বিকাল ৫:০০ টা
                   </span>
                 </li>
               </ul>
@@ -212,17 +214,18 @@ export default function Footer() {
             {/* Newsletter */}
             <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
               <h5 className="mb-2 text-sm font-semibold text-white/90">
-                {t("newsletter")}
+                আপডেট পান
               </h5>
 
               <p className="mb-4 text-xs leading-6 text-white/40">
-                {t("newsletterDesc")}
+                আমাদের সর্বশেষ কার্যক্রম, মানবিক উদ্যোগ ও আপডেট পেতে ইমেইল
+                সাবস্ক্রাইব করুন।
               </p>
 
               <div className="flex gap-2">
                 <Input
                   type="email"
-                  placeholder={t("emailPlaceholder")}
+                  placeholder="আপনার ইমেইল লিখুন"
                   className="h-11 border-white/10 bg-white/5 text-white placeholder:text-white/30 focus-visible:ring-emerald-500"
                 />
 
@@ -248,7 +251,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="font-medium text-emerald-400 transition hover:text-emerald-300"
             >
-              Sabilul Huda Web team
+              Sabilul Huda Web Team
             </Link>
             .
           </p>
@@ -258,14 +261,14 @@ export default function Footer() {
               href="#"
               className="text-xs text-white/40 transition hover:text-white/70"
             >
-              {t("privacy")}
+              গোপনীয়তা নীতি
             </Link>
 
             <Link
               href="#"
               className="text-xs text-white/40 transition hover:text-white/70"
             >
-              {t("terms")}
+              সেবার শর্তাবলী
             </Link>
           </div>
         </div>
