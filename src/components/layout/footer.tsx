@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import { Input } from "../ui/input";
+import { BsYoutube } from "react-icons/bs";
 
 /* ─────────────────────── Footer ─────────────────────── */
 export default function Footer() {
@@ -35,6 +36,11 @@ export default function Footer() {
       icon: <CiFacebook className="h-5 w-5" />,
       href: "https://www.facebook.com/share/1J3tTLhwUP/",
       label: "Facebook",
+    },
+    {
+      icon: <BsYoutube className="h-5 w-5" />,
+      href: "https://youtube.com/@shef.oficial?si=ctZOq101KWWhbvqQ",
+      label: "Youtube",
     },
     {
       icon: <Mail className="h-5 w-5" />,
