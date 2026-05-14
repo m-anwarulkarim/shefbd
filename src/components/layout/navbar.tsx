@@ -8,17 +8,43 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Mail, Phone, Menu, ChevronDown, X } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  Menu,
+  ChevronDown,
+  X,
+  Home,
+  Info,
+  Activity,
+  FolderKanban,
+  Users,
+  HandHelping,
+  Images,
+  GraduationCap,
+  BookOpenCheck,
+  HeartHandshake,
+  Sparkles,
+  Building2,
+  UserRoundCog,
+} from "lucide-react";
 
 import { CiFacebook } from "react-icons/ci";
 import { FaYoutube } from "react-icons/fa";
 
 /* ──────────────────────────── Types ──────────────────────────── */
 
+interface DropdownLink {
+  label: string;
+  href: string;
+  icon?: React.ReactNode;
+}
+
 interface NavItem {
   label: string;
   href: string;
-  dropdown?: { label: string; href: string }[];
+  icon?: React.ReactNode;
+  dropdown?: DropdownLink[];
 }
 
 /* ──────────────────────────── Dropdown ──────────────────────────── */
@@ -43,7 +69,7 @@ function DropdownItem({ item }: { item: NavItem }) {
     return (
       <Link
         href={item.href}
-        className="relative text-[13px] font-semibold tracking-wide text-slate-700 transition-colors duration-200 hover:text-emerald-700"
+        className="group relative flex items-center gap-1.5 text-[13px] font-semibold tracking-wide text-slate-700 transition-colors duration-200 hover:text-emerald-700"
       >
         {item.label}
       </Link>
@@ -55,7 +81,7 @@ function DropdownItem({ item }: { item: NavItem }) {
       <button
         onClick={() => setOpen(!open)}
         onMouseEnter={() => setOpen(true)}
-        className="group flex items-center gap-1 text-[13px] font-semibold tracking-wide text-slate-700 transition-colors duration-200 hover:text-emerald-700"
+        className="group flex items-center gap-1.5 text-[13px] font-semibold tracking-wide text-slate-700 transition-colors duration-200 hover:text-emerald-700"
       >
         {item.label}
 
@@ -68,7 +94,7 @@ function DropdownItem({ item }: { item: NavItem }) {
 
       <div
         onMouseLeave={() => setOpen(false)}
-        className={`absolute left-0 top-full z-50 mt-3 min-w-[220px] origin-top transition-all duration-200 ${
+        className={`absolute left-0 top-full z-50 mt-3 min-w-[240px] origin-top transition-all duration-200 ${
           open
             ? "scale-y-100 opacity-100"
             : "pointer-events-none scale-y-95 opacity-0"
@@ -86,7 +112,9 @@ function DropdownItem({ item }: { item: NavItem }) {
                 i !== 0 ? "border-t border-emerald-50" : ""
               }`}
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 opacity-0 transition-opacity duration-150 group-hover/item:opacity-100" />
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700 transition group-hover/item:bg-emerald-700 group-hover/item:text-white">
+                {sub.icon}
+              </span>
 
               {sub.label}
             </Link>
@@ -146,7 +174,10 @@ function MobileMenu({
                     }
                     className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-semibold text-slate-700 transition hover:bg-emerald-50"
                   >
-                    {item.label}
+                    <span className="flex items-center gap-2">
+                      <span className="text-emerald-700">{item.icon}</span>
+                      {item.label}
+                    </span>
 
                     <ChevronDown
                       className={`h-4 w-4 transition-transform duration-300 ${
@@ -165,9 +196,11 @@ function MobileMenu({
                         key={sub.href}
                         href={sub.href}
                         onClick={onClose}
-                        className="flex items-center gap-2 rounded-lg py-2.5 pl-8 pr-3 text-sm text-slate-500 transition hover:bg-emerald-50 hover:text-emerald-700"
+                        className="flex items-center gap-3 rounded-lg py-2.5 pl-8 pr-3 text-sm text-slate-500 transition hover:bg-emerald-50 hover:text-emerald-700"
                       >
-                        <span className="h-1 w-1 rounded-full bg-emerald-400" />
+                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700">
+                          {sub.icon}
+                        </span>
 
                         {sub.label}
                       </Link>
@@ -178,8 +211,9 @@ function MobileMenu({
                 <Link
                   href={item.href}
                   onClick={onClose}
-                  className="flex rounded-lg px-3 py-3 text-sm font-semibold text-slate-700 transition hover:bg-emerald-50"
+                  className="flex items-center gap-2 rounded-lg px-3 py-3 text-sm font-semibold text-slate-700 transition hover:bg-emerald-50 hover:text-emerald-700"
                 >
+                  <span className="text-emerald-700">{item.icon}</span>
                   {item.label}
                 </Link>
               )}
@@ -190,8 +224,9 @@ function MobileMenu({
             <Link
               href="/donation"
               onClick={onClose}
-              className="flex w-full items-center justify-center rounded-xl bg-emerald-700 py-3 text-sm font-bold text-white shadow-md transition hover:bg-emerald-800"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 py-3 text-sm font-bold text-white shadow-md transition hover:bg-emerald-800"
             >
+              <HeartHandshake className="h-4 w-4" />
               {t("donateNow")}
             </Link>
           </div>
@@ -208,17 +243,16 @@ export default function Navbar() {
 
   const t = useTranslations("Navbar");
 
-  /* ──────────────────────────── Dropdown Data ──────────────────────────── */
-
   const aboutDropdown = [
     {
       label: t("AboutOrganization"),
       href: "/about/about-organization",
+      icon: <Building2 className="h-4 w-4" />,
     },
-
     {
       label: t("aboutAuthority"),
       href: "/about/about-authority",
+      icon: <UserRoundCog className="h-4 w-4" />,
     },
   ];
 
@@ -226,89 +260,76 @@ export default function Navbar() {
     {
       label: t("EducationAndTraining"),
       href: "/activities/education",
+      icon: <GraduationCap className="h-4 w-4" />,
     },
-
     {
       label: t("DawahAndResearch"),
       href: "/activities/dawah",
+      icon: <BookOpenCheck className="h-4 w-4" />,
     },
-
     {
       label: t("SelfPurification"),
       href: "/activities/self-purification",
+      icon: <Sparkles className="h-4 w-4" />,
     },
-
     {
       label: t("ServiceOfHumanity"),
       href: "/activities/service-of-humanity",
+      icon: <HeartHandshake className="h-4 w-4" />,
     },
   ];
 
-  // const gallery = [
-  //   {
-  //     label: t("photoGallery"),
-  //     href: "/gallery/photos",
-  //   },
-
-  //   {
-  //     label: t("videoGallery"),
-  //     href: "/gallery/videos",
-  //   },
-  // ];
-
-  /* ──────────────────────────── Navigation ──────────────────────────── */
-
   const navItems: NavItem[] = [
-    { label: t("home"), href: "/" },
-
+    {
+      label: t("home"),
+      href: "/",
+      icon: <Home className="h-4 w-4" />,
+    },
     {
       label: t("aboutUs"),
       href: "/about",
       dropdown: aboutDropdown,
+      icon: <Info className="h-4 w-4" />,
     },
-
     {
       label: t("ourActivities"),
       href: "/activities",
       dropdown: activitiesDropdown,
+      icon: <Activity className="h-4 w-4" />,
     },
-
     {
       label: t("ongoingProjects"),
       href: "/ongoing-projects",
+      icon: <FolderKanban className="h-4 w-4" />,
     },
-
     {
       label: t("donorMember"),
       href: "/donor-member",
+      icon: <Users className="h-4 w-4" />,
     },
-
     {
       label: t("volunteerRegistration"),
       href: "/volunteer-registration",
+      icon: <HandHelping className="h-4 w-4" />,
     },
-
     {
       label: t("gallery"),
       href: "/gallery",
-      // dropdown: gallery,
+      icon: <Images className="h-4 w-4" />,
     },
-
     {
       label: t("contact"),
       href: "/contact",
+      icon: <Phone className="h-4 w-4" />,
     },
   ];
 
   return (
     <>
       <header className="sticky top-0 z-50 w-full">
-        {/* ───────────────── Top Bar ───────────────── */}
-
+        {/* Top Bar */}
         <div className="bg-emerald-950">
           <div className="mx-auto grid max-w-7xl grid-cols-3 items-center px-4 py-2">
-            {/* Social */}
-
             <div className="flex items-center gap-2.5">
               <Link
                 href="https://www.facebook.com/share/1J3tTLhwUP/"
@@ -317,6 +338,7 @@ export default function Navbar() {
               >
                 <CiFacebook className="h-4 w-4" />
               </Link>
+
               <Link
                 href="https://youtube.com/@shef.oficial?si=ctZOq101KWWhbvqQ"
                 aria-label="Youtube"
@@ -324,8 +346,9 @@ export default function Navbar() {
               >
                 <FaYoutube className="h-4 w-4" />
               </Link>
+
               <Link
-                href="shefngo@gmail.com"
+                href="mailto:shefngo@gmail.com"
                 aria-label="Email"
                 className="rounded-full p-1 text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white"
               >
@@ -341,13 +364,9 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Welcome */}
-
             <p className="hidden text-center text-xs font-medium tracking-wider text-emerald-200/90 sm:block">
               {t("welcome")}
             </p>
-
-            {/* Language */}
 
             <div className="flex items-center justify-end gap-1">
               <Link
@@ -369,12 +388,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* ───────────────── Main Navbar ───────────────── */}
-
+        {/* Main Navbar */}
         <nav className="sticky top-0 z-40 border-b border-emerald-100 bg-white/95 shadow-sm backdrop-blur-md">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-            {/* Logo */}
-
             <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/Logo.png"
@@ -396,8 +412,6 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* Desktop Nav */}
-
             <div className="hidden items-center gap-5 lg:flex">
               {navItems.map((item) => (
                 <DropdownItem key={item.label} item={item} />
@@ -405,13 +419,12 @@ export default function Navbar() {
 
               <Link
                 href="/donation"
-                className="ml-2 rounded-full bg-emerald-700 px-6 py-2.5 text-[13px] font-bold text-white shadow-md shadow-emerald-800/20 transition-all duration-200 hover:bg-emerald-800 hover:shadow-lg hover:shadow-emerald-800/30 active:scale-[0.98]"
+                className="ml-2 flex items-center gap-2 rounded-full bg-emerald-700 px-6 py-2.5 text-[13px] font-bold text-white shadow-md shadow-emerald-800/20 transition-all duration-200 hover:bg-emerald-800 hover:shadow-lg hover:shadow-emerald-800/30 active:scale-[0.98]"
               >
+                <HeartHandshake className="h-4 w-4" />
                 {t("donate")}
               </Link>
             </div>
-
-            {/* Mobile Button */}
 
             <button
               onClick={() => setMobileOpen(true)}
@@ -422,8 +435,6 @@ export default function Navbar() {
           </div>
         </nav>
       </header>
-
-      {/* Mobile Menu */}
 
       <MobileMenu
         isOpen={mobileOpen}
