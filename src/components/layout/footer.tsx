@@ -182,7 +182,7 @@ export default function Footer() {
                     href="tel:+8801774392665"
                     className="text-sm text-white/50 transition hover:text-white"
                   >
-                    +৮৮০ ১৭৭৪-৩৯২৬৬৫
+                    +8801774392665
                   </Link>
                 </li>
 
