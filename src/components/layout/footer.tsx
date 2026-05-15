@@ -247,7 +247,7 @@ export default function Footer() {
             Copyright © {new Date().getFullYear()} Sabilul Huda Education
             Foundation. All rights reserved. Made by{" "}
             <Link
-              href="#"
+              href="https://www.facebook.com/profile.php?id=100090871429446"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-emerald-400 transition hover:text-emerald-300"

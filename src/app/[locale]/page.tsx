@@ -17,7 +17,7 @@ export default function HomePage() {
       <ActivitySection />
       {/* <AboutPage /> */}
       <OngoingProjectsSection />
-      <ProjectMosqueComplexPage />
+      {/* <ProjectMosqueComplexPage /> */}
       <HowYouCanDonatePage />
       <DonationPage />
     </main>

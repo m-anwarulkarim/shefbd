@@ -24,9 +24,12 @@ export default function HowYouCanDonatePage() {
           <h1 className="text-3xl font-extrabold tracking-tight text-emerald-950 sm:text-4xl">
             {t("title")}
           </h1>
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
+            {t("description")}
+          </p>
         </div>
 
-        {/* Land & Construction Cost */}
+        {/* Land & Construction Cost
         <div className="mb-10 grid gap-4 sm:grid-cols-2">
           <Card className="border-white/70 bg-white/80 backdrop-blur-sm">
             <CardContent className="flex items-center gap-4 p-5">
@@ -56,7 +59,7 @@ export default function HowYouCanDonatePage() {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </div> */}
 
         {/* Payment Methods */}
         <div className="grid gap-6 lg:grid-cols-2">

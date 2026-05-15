@@ -387,6 +387,7 @@
   "Donation": {
     "badge": "Support Us",
     "title": "How You Can Help",
+    "description": "Even your small contribution can become part of a lasting Sadaqah Jariyah. Your donation will play an important role in land acquisition, construction, educational activities, and humanitarian initiatives for the Mosque Complex and Islamic Center.",
     "landLabel": "Per square foot land price",
     "landPrice": "৳ 5,000",
     "constructionLabel": "Per square foot construction cost",

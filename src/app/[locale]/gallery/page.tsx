@@ -229,9 +229,13 @@ export default function MediaGalleryPage() {
           {selectedVideo && (
             <div className="aspect-video w-full overflow-hidden rounded-xl">
               <iframe
-                src={`${selectedVideo}?autoplay=1`}
+                key={selectedVideo}
+                src={`${selectedVideo}${
+                  selectedVideo.includes("?") ? "&" : "?"
+                }autoplay=1&rel=0`}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
                 className="h-full w-full"
               />
