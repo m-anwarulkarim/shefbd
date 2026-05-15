@@ -49,5 +49,3 @@ export const videos = [
     embed: "https://www.youtube.com/embed/jieFG1saC-Y",
   },
 ];
-
-// <iframe width="394" height="695" src="https://www.youtube.com/embed/jieFG1saC-Y" title="ছিন্নমূল মক্তব শিশুদের মাঝে কুরআন শরীফ বিতরণ | মানবিক ও দীনি উদ্যোগ .   #shef  #খাবার_বিতরণ #দান" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

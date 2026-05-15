@@ -28,7 +28,8 @@ export default function Footer() {
       href: "/volunteer-registration",
     },
     { label: "দান করুন", href: "/donation" },
-    { label: "ভিডিও গ্যালারি", href: "/video" },
+    { label: "ভিডিও গ্যালারি", href: "/gallery/videos" },
+    { label: " ছবি গ্যালারি", href: "/gallery/photos" },
   ];
 
   const socialLinks = [
