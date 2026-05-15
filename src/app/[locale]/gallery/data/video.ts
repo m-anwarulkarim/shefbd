@@ -33,4 +33,21 @@ export const videos = [
     thumbnail: "/video/themlin/video-4.png",
     embed: "https://www.youtube.com/embed/u5mJwF2ouCM",
   },
+  {
+    title:
+      "ছিন্নমূল মক্তব শিশুদের মাঝে কুরআন শরীফ বিতরণ | মানবিক ও দীনি উদ্যোগ",
+    description: `আলহামদুলিল্লাহ, ছিন্নমূল ও সুবিধাবঞ্চিত মক্তব শিশুদের মাঝে পবিত্র কুরআন শরীফ বিতরণ করা হয়েছে।
+এই ছোট্ট দীনি উদ্যোগের মাধ্যমে শিশুদের কুরআন শিক্ষার প্রতি আগ্রহ বৃদ্ধি এবং ইসলামের আলো তাদের মাঝে পৌঁছে দেওয়ার চেষ্টা করা হয়েছে।
+অনেক শিশু রয়েছে যারা আর্থিক সংকটের কারণে নিজস্ব কুরআন শরীফ সংগ্রহ করতে পারে না। আপনাদের দান, সাদাকা ও সহযোগিতার মাধ্যমেই এই কার্যক্রম বাস্তবায়ন করা সম্ভব হয়েছে।
+আপনিও চাইলে এই মহৎ কাজে শরীক হতে পারেন।
+একটি কুরআন উপহার হতে পারে একটি শিশুর দ্বীনি শিক্ষার নতুন সূচনা। 
+🤲 আসুন, কুরআনের আলো পৌঁছে দিই প্রতিটি শিশুর হাতে 
+
+`,
+
+    thumbnail: "/video/themlin/video-5.png",
+    embed: "https://www.youtube.com/embed/jieFG1saC-Y",
+  },
 ];
+
+// <iframe width="394" height="695" src="https://www.youtube.com/embed/jieFG1saC-Y" title="ছিন্নমূল মক্তব শিশুদের মাঝে কুরআন শরীফ বিতরণ | মানবিক ও দীনি উদ্যোগ .   #shef  #খাবার_বিতরণ #দান" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

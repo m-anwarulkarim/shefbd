@@ -365,7 +365,7 @@ export default function Navbar() {
             </div>
 
             <p className="hidden text-center text-xs font-medium tracking-wider text-emerald-200/90 sm:block">
-              {t("welcome")}
+              সবিলুল হুদা এডুকেশন ফাউন্ডেশনে স্বাগতম
             </p>
 
             <div className="flex items-center justify-end gap-1">

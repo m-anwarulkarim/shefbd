@@ -3,7 +3,6 @@
 import HeroSection from "@/components/home/hero-section";
 
 import CourseSection from "@/components/CourseSection";
-import AboutPage from "./about/page";
 import DonationPage from "./donation/page";
 import OngoingProjectsSection from "@/components/OngoingProjectsSection";
 import HowYouCanDonatePage from "@/components/home/how-you-can-donate";
