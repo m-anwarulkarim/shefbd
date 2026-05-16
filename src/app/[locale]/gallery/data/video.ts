@@ -47,4 +47,20 @@ export const videos = [
     thumbnail: "/video/themlin/video-5.png",
     embed: "https://www.youtube.com/embed/jieFG1saC-Y",
   },
+
+  {
+    title:
+      "ভাষানটেক ধামালকোট বস্তির মক্তব শিশুদের মাঝে খাবার বিতরণ | মানবিক সহায়তার এক সুন্দর উদ্যোগ",
+    description: `আলহামদুলিল্লাহ, ভাষানটেক ধামালকোট হাজী সোবহান রোড টেকের মাথায় অবস্থিত বস্তির মক্তবের শিশুদের মাঝে খাবার বিতরণ করা হয়েছে।
+এই মানবিক কার্যক্রমের মাধ্যমে সুবিধাবঞ্চিত ও ছিন্নমূল শিশুদের মুখে হাসি ফোটানোর একটি ছোট্ট প্রচেষ্টা করা হয়েছে।
+
+আপনাদের দান, সাদাকা ও আন্তরিক সহযোগিতার মাধ্যমেই এই ধরনের সেবামূলক উদ্যোগ পরিচালনা করা সম্ভব হচ্ছে।
+আমরা বিশ্বাস করি, সামান্য সহযোগিতাও একটি শিশুর মুখে হাসি এনে দিতে পারে।
+
+আপনিও চাইলে এই মহৎ কাজে শরীক হতে পারেন।
+আসুন, মানবতার সেবায় একসাথে এগিয়ে আসি।`,
+    thumbnail: "/video/themlin/video-6.png",
+    embed: "https://www.youtube.com/embed/mAhN1Y4sdPg",
+  },
 ];
+// <iframe width="394" height="695" src="https://www.youtube.com/embed/mAhN1Y4sdPg" title="ভাষানটেক ধামালকোট বস্তির মক্তব শিশুদের মাঝে খাবার বিতরণ | মানবিক সহায়তার এক সুন্দর উদ্যোগ  #দান" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
