@@ -62,5 +62,14 @@ export const videos = [
     thumbnail: "/video/themlin/video-6.png",
     embed: "https://www.youtube.com/embed/mAhN1Y4sdPg",
   },
+  {
+    title:
+      "ইনসানিয়াত দস্তরখান | মিরপুর কমার্স কলেজ সংলগ্ন বস্তির মক্তবে খাবার বিতরণ কর্মসূচি",
+    description: `আলহামদুলিল্লাহ, “ইনসানিয়াত দস্তরখান” এর উদ্যোগে মিরপুর কমার্স কলেজ সংলগ্ন বস্তির মক্তবের শিশু ও সুবিধাবঞ্চিত মানুষের মাঝে খাবার বিতরণ কর্মসূচি সম্পন্ন করা হয়েছে।
+
+এই মানবিক উদ্যোগের মাধ্যমে অসহায় ও ছিন্নমূল মানুষের পাশে দাঁড়ানোর ক্ষুদ্র প্রয়াস অব্যাহত রয়েছে। আপনাদের দান, সাদাকা ও সহযোগিতার মাধ্যমেই এই ধরনের সেবামূলক কার্যক্রম পরিচালনা করা সম্ভব হচ্ছে।
+আসুন, আমরা সবাই মানবতার সেবায় এগিয়ে আসি এবং ক্ষুধার্ত মানুষের মুখে হাসি ফোটাতে ভূমিকা রাখি।`,
+    thumbnail: "/video/themlin/video-7.png",
+    embed: "https://www.youtube.com/embed/EedAMFYCLU4",
+  },
 ];
-// <iframe width="394" height="695" src="https://www.youtube.com/embed/mAhN1Y4sdPg" title="ভাষানটেক ধামালকোট বস্তির মক্তব শিশুদের মাঝে খাবার বিতরণ | মানবিক সহায়তার এক সুন্দর উদ্যোগ  #দান" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
