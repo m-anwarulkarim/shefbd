@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   BadgeCheck,
   Building2,
@@ -44,8 +45,68 @@ const complexItems = [
 ];
 
 export default function MembershipPage() {
+  const router = useRouter();
+
   const [memberType, setMemberType] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!memberType) {
+      alert("সদস্যতার ধরন নির্বাচন করুন");
+      return;
+    }
+
+    if (!paymentMethod) {
+      alert("পেমেন্ট মাধ্যম নির্বাচন করুন");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      memberType,
+      paymentMethod,
+      name: formData.get("name"),
+      fatherName: formData.get("fatherName"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      profession: formData.get("profession"),
+      address: formData.get("address"),
+    };
+
+    try {
+      const res = await fetch("/api/membership", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        alert(data.message || "Failed to submit form");
+        return;
+      }
+
+      form.reset();
+      setMemberType("");
+      setPaymentMethod("");
+      router.push("/thank-you");
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="relative overflow-hidden py-16 lg:py-24">
@@ -308,7 +369,7 @@ export default function MembershipPage() {
                 </p>
               </div>
 
-              <form className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
                   <Label>
                     সদস্যতার ধরন <span className="text-red-500">*</span>
@@ -320,9 +381,11 @@ export default function MembershipPage() {
                     </SelectTrigger>
 
                     <SelectContent>
-                      <SelectItem value="life">লাইফ মেম্বার</SelectItem>
-                      <SelectItem value="donor">ডোনার মেম্বার</SelectItem>
-                      <SelectItem value="squarefeet">
+                      <SelectItem value="লাইফ মেম্বার">লাইফ মেম্বার</SelectItem>
+                      <SelectItem value="ডোনার মেম্বার">
+                        ডোনার মেম্বার
+                      </SelectItem>
+                      <SelectItem value="স্কয়ার ফিট ডোনার">
                         স্কয়ার ফিট ডোনার
                       </SelectItem>
                     </SelectContent>
@@ -335,6 +398,7 @@ export default function MembershipPage() {
                   </Label>
 
                   <Input
+                    name="name"
                     required
                     placeholder="আপনার পূর্ণ নাম"
                     className="h-12 rounded-2xl border-emerald-100 bg-white/90 focus-visible:ring-emerald-600"
@@ -345,6 +409,7 @@ export default function MembershipPage() {
                   <Label>পিতার নাম</Label>
 
                   <Input
+                    name="fatherName"
                     placeholder="পিতার পূর্ণ নাম"
                     className="h-12 rounded-2xl border-emerald-100 bg-white/90 focus-visible:ring-emerald-600"
                   />
@@ -356,6 +421,7 @@ export default function MembershipPage() {
                   </Label>
 
                   <Input
+                    name="phone"
                     required
                     placeholder="01XXXXXXXXX"
                     className="h-12 rounded-2xl border-emerald-100 bg-white/90 focus-visible:ring-emerald-600"
@@ -366,6 +432,7 @@ export default function MembershipPage() {
                   <Label>ই-মেইল ঠিকানা</Label>
 
                   <Input
+                    name="email"
                     type="email"
                     placeholder="আপনার ই-মেইল"
                     className="h-12 rounded-2xl border-emerald-100 bg-white/90 focus-visible:ring-emerald-600"
@@ -376,6 +443,7 @@ export default function MembershipPage() {
                   <Label>পেশা</Label>
 
                   <Input
+                    name="profession"
                     placeholder="আপনার পেশা"
                     className="h-12 rounded-2xl border-emerald-100 bg-white/90 focus-visible:ring-emerald-600"
                   />
@@ -387,6 +455,7 @@ export default function MembershipPage() {
                   </Label>
 
                   <Textarea
+                    name="address"
                     required
                     placeholder="আপনার পূর্ণ ঠিকানা"
                     className="min-h-[120px] rounded-2xl border-emerald-100 bg-white/90 focus-visible:ring-emerald-600"
@@ -408,8 +477,10 @@ export default function MembershipPage() {
                     </SelectTrigger>
 
                     <SelectContent>
-                      <SelectItem value="bkash">বিকাশ / নগদ</SelectItem>
-                      <SelectItem value="bank">ব্যাংক ট্রান্সফার</SelectItem>
+                      <SelectItem value="বিকাশ / নগদ">বিকাশ / নগদ</SelectItem>
+                      <SelectItem value="ব্যাংক ট্রান্সফার">
+                        ব্যাংক ট্রান্সফার
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -425,12 +496,13 @@ export default function MembershipPage() {
                 <div className="flex justify-center pt-2">
                   <Button
                     type="submit"
-                    className="group relative h-12 overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 px-12 text-sm font-semibold text-white shadow-lg shadow-emerald-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-xl hover:shadow-emerald-900/30"
+                    disabled={isSubmitting}
+                    className="group relative h-12 overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 px-12 text-sm font-semibold text-white shadow-lg shadow-emerald-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-xl hover:shadow-emerald-900/30 disabled:cursor-not-allowed disabled:opacity-70"
                   >
                     <span className="absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                     <span className="relative flex items-center gap-2">
-                      আবেদন জমা দিন
+                      {isSubmitting ? "জমা হচ্ছে..." : "আবেদন জমা দিন"}
                     </span>
                   </Button>
                 </div>

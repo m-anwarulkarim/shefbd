@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   HeartHandshake,
   Send,
@@ -17,6 +19,63 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 export default function VolunteerRegistrationPage() {
+  const router = useRouter();
+
+  const [isExpatriate, setIsExpatriate] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      isExpatriate,
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      facebook: formData.get("facebook"),
+      nid: formData.get("nid"),
+      education: formData.get("education"),
+      profession: formData.get("profession"),
+      volunteerWork: formData.get("volunteerWork"),
+      skills: formData.get("skills"),
+      permanentDistrict: formData.get("permanentDistrict"),
+      permanentAddress: formData.get("permanentAddress"),
+      currentDistrict: formData.get("currentDistrict"),
+      currentAddress: formData.get("currentAddress"),
+    };
+
+    try {
+      const res = await fetch("/api/volunteer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        alert(data.message || "Failed to submit form");
+        return;
+      }
+
+      form.reset();
+      setIsExpatriate(false);
+      router.push("/thank-you");
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4">
@@ -43,32 +102,44 @@ export default function VolunteerRegistrationPage() {
 
         <Card className="rounded-[2rem] border-white/70 bg-white/90 shadow-2xl shadow-emerald-900/5 backdrop-blur-sm">
           <CardContent className="p-6 sm:p-8 lg:p-10">
-            <form className="space-y-10">
+            <form onSubmit={handleSubmit} className="space-y-10">
               <div className="grid gap-8 lg:grid-cols-2">
                 <FormBlock
                   icon={<UserRound className="h-5 w-5" />}
                   title="ব্যক্তিগত তথ্য"
                 >
-                  <InputField label="নাম" required placeholder="মোহাম্মদ ওমর" />
+                  <InputField
+                    name="name"
+                    label="নাম"
+                    required
+                    placeholder="মোহাম্মদ ওমর"
+                  />
 
-                  <div className="space-y-3">
-                    <Label>প্রবাসী</Label>
-                    <Checkbox />
+                  <div className="flex items-center gap-3">
+                    <Checkbox
+                      id="isExpatriate"
+                      checked={isExpatriate}
+                      onCheckedChange={(checked) =>
+                        setIsExpatriate(Boolean(checked))
+                      }
+                    />
+                    <Label htmlFor="isExpatriate">প্রবাসী</Label>
                   </div>
 
-                  <InputField label="মোবাইল নম্বর" required />
-                  <InputField label="ই-মেইল" type="email" />
-                  <InputField label="ফেসবুক আইডি লিংক" />
-                  <InputField label="এনআইডি নম্বর" />
-                  <InputField label="শিক্ষাগত যোগ্যতা" />
-                  <InputField label="পেশা" required />
+                  <InputField name="phone" label="মোবাইল নম্বর" required />
+                  <InputField name="email" label="ই-মেইল" type="email" />
+                  <InputField name="facebook" label="ফেসবুক আইডি লিংক" />
+                  <InputField name="nid" label="এনআইডি নম্বর" />
+                  <InputField name="education" label="শিক্ষাগত যোগ্যতা" />
+                  <InputField name="profession" label="পেশা" required />
 
                   <TextareaField
+                    name="volunteerWork"
                     label="যে কাজে স্বেচ্ছাসেবক হতে চান"
                     required
                   />
 
-                  <TextareaField label="বিশেষ দক্ষতা" />
+                  <TextareaField name="skills" label="বিশেষ দক্ষতা" />
                 </FormBlock>
 
                 <div className="space-y-8">
@@ -77,12 +148,17 @@ export default function VolunteerRegistrationPage() {
                     title="স্থায়ী ঠিকানা"
                   >
                     <InputField
+                      name="permanentDistrict"
                       label="জেলা / থানা"
                       required
                       placeholder="জেলা / থানা নির্বাচন করুন"
                     />
 
-                    <TextareaField label="ঠিকানা" required />
+                    <TextareaField
+                      name="permanentAddress"
+                      label="ঠিকানা"
+                      required
+                    />
                   </FormBlock>
 
                   <FormBlock
@@ -90,12 +166,17 @@ export default function VolunteerRegistrationPage() {
                     title="বর্তমান ঠিকানা"
                   >
                     <InputField
+                      name="currentDistrict"
                       label="জেলা / থানা"
                       required
                       placeholder="জেলা / থানা নির্বাচন করুন"
                     />
 
-                    <TextareaField label="ঠিকানা" required />
+                    <TextareaField
+                      name="currentAddress"
+                      label="ঠিকানা"
+                      required
+                    />
                   </FormBlock>
                 </div>
               </div>
@@ -105,8 +186,12 @@ export default function VolunteerRegistrationPage() {
               </p>
 
               <div className="flex justify-center">
-                <Button className="group h-12 rounded-2xl bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 px-10 font-bold text-white shadow-lg shadow-emerald-900/20 hover:shadow-xl">
-                  আবেদন পাঠান
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="group h-12 rounded-2xl bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 px-10 font-bold text-white shadow-lg shadow-emerald-900/20 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  {isSubmitting ? "পাঠানো হচ্ছে..." : "আবেদন পাঠান"}
                   <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </div>
@@ -143,11 +228,13 @@ function FormBlock({
 }
 
 function InputField({
+  name,
   label,
   placeholder,
   type = "text",
   required,
 }: {
+  name: string;
   label: string;
   placeholder?: string;
   type?: string;
@@ -160,6 +247,7 @@ function InputField({
       </Label>
 
       <Input
+        name={name}
         type={type}
         required={required}
         placeholder={placeholder}
@@ -170,10 +258,12 @@ function InputField({
 }
 
 function TextareaField({
+  name,
   label,
   placeholder,
   required,
 }: {
+  name: string;
   label: string;
   placeholder?: string;
   required?: boolean;
@@ -185,6 +275,7 @@ function TextareaField({
       </Label>
 
       <Textarea
+        name={name}
         required={required}
         placeholder={placeholder}
         className="min-h-[120px] rounded-2xl border-emerald-100 bg-white/90 focus-visible:ring-emerald-600"

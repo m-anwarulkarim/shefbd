@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   HandHeart,
@@ -19,12 +20,58 @@ const amounts = [10, 25, 50, 100, 250, 500];
 
 export default function DonationPage() {
   const t = useTranslations("DonationForm");
+  const router = useRouter();
+
   const [selectedAmount, setSelectedAmount] = useState(10);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      trxId: formData.get("trxId"),
+      email: formData.get("email"),
+      customAmount: formData.get("customAmount"),
+      donationAmount: selectedAmount,
+    };
+
+    try {
+      const res = await fetch("/api/donation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        alert(data.message || "Failed to submit donation");
+        return;
+      }
+
+      form.reset();
+      setSelectedAmount(10);
+      router.push("/thank-you");
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="relative py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4">
-        {/* Header */}
         <div className="mb-10 text-center">
           <Badge
             variant="outline"
@@ -45,37 +92,15 @@ export default function DonationPage() {
           </p>
         </div>
 
-        {/* Main Card */}
         <Card className="overflow-hidden rounded-[2rem] border-white/70 bg-white/85 shadow-2xl shadow-emerald-900/5 backdrop-blur-sm">
           <CardContent className="p-6 sm:p-10">
-            <form
-              action="https://formsubmit.co/b5eb5e98de3df7c0deb3d195673410b2"
-              method="POST"
-              className="space-y-10"
-            >
+            <form onSubmit={handleSubmit} className="space-y-10">
               <input
                 type="hidden"
-                name="_subject"
-                value="New Donation Submission"
-              />
-
-              <input type="hidden" name="_captcha" value="false" />
-
-              <input type="hidden" name="_template" value="table" />
-
-              <input
-                type="hidden"
-                name="_next"
-                value="http://localhost:3000/thank-you"
-              />
-
-              <input
-                type="hidden"
-                name="Donation Amount"
+                name="donationAmount"
                 value={`BDT ${selectedAmount}`}
               />
 
-              {/* Donation Amount */}
               <div>
                 <div className="mb-5 flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
@@ -114,16 +139,15 @@ export default function DonationPage() {
 
                 <Input
                   type="number"
-                  name="Custom Amount"
+                  name="customAmount"
                   placeholder={t("customAmountPlaceholder")}
                   className="mt-4 h-12 rounded-2xl border-emerald-100 bg-white/80 focus-visible:ring-emerald-600"
                   onChange={(e) =>
-                    setSelectedAmount(Number(e.target.value || 0))
+                    setSelectedAmount(Number(e.target.value || 10))
                   }
                 />
               </div>
 
-              {/* Donor Info */}
               <div>
                 <div className="mb-5 flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
@@ -141,14 +165,14 @@ export default function DonationPage() {
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Input
-                    name="First Name"
+                    name="firstName"
                     placeholder={t("firstName")}
                     required
                     className="h-12 rounded-2xl border-emerald-100 bg-white/80 focus-visible:ring-emerald-600"
                   />
 
                   <Input
-                    name="Last Name"
+                    name="lastName"
                     placeholder={t("lastName")}
                     required
                     className="h-12 rounded-2xl border-emerald-100 bg-white/80 focus-visible:ring-emerald-600"
@@ -157,14 +181,14 @@ export default function DonationPage() {
 
                 <div className="mt-4 space-y-4">
                   <Input
-                    name="Bkash Transaction ID"
+                    name="trxId"
                     placeholder={t("trxId")}
                     required
                     className="h-12 rounded-2xl border-emerald-100 bg-white/80 focus-visible:ring-emerald-600"
                   />
 
                   <Input
-                    name="Email"
+                    name="email"
                     type="email"
                     placeholder={t("email")}
                     required
@@ -173,7 +197,6 @@ export default function DonationPage() {
                 </div>
               </div>
 
-              {/* Payment Info */}
               <div>
                 <div className="mb-5 flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
@@ -199,7 +222,6 @@ export default function DonationPage() {
                   </div>
 
                   <CardContent className="space-y-5 p-5">
-                    {/* Summary */}
                     <div className="rounded-2xl bg-slate-50 p-5">
                       <h3 className="mb-4 text-sm font-bold text-slate-900">
                         {t("summaryTitle")}
@@ -234,7 +256,6 @@ export default function DonationPage() {
                       </div>
                     </div>
 
-                    {/* Bank Info */}
                     <div className="rounded-2xl border border-emerald-100 bg-emerald-50/60 p-5">
                       <Badge className="mb-4 bg-emerald-600 text-white hover:bg-emerald-600">
                         {t("forDonation")}
@@ -275,16 +296,16 @@ export default function DonationPage() {
                 </Card>
               </div>
 
-              {/* Button */}
               <div className="flex justify-center">
                 <Button
                   type="submit"
-                  className="group relative h-12 overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 px-10 text-sm font-semibold text-white shadow-lg shadow-emerald-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-emerald-900/30"
+                  disabled={isSubmitting}
+                  className="group relative h-12 overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 px-10 text-sm font-semibold text-white shadow-lg shadow-emerald-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-emerald-900/30 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   <span className="absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                   <span className="relative flex items-center gap-2">
-                    {t("submit")}
+                    {isSubmitting ? "Submitting..." : t("submit")}
 
                     <HandHeart className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
                   </span>
