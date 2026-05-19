@@ -6,7 +6,6 @@ import CourseSection from "@/components/CourseSection";
 import DonationPage from "./donation/page";
 import OngoingProjectsSection from "@/components/OngoingProjectsSection";
 import HowYouCanDonatePage from "@/components/home/how-you-can-donate";
-import ProjectMosqueComplexPage from "@/components/ProjectMosqueComplexSection";
 import ActivitySection from "@/components/ActivitySection";
 
 export default function HomePage() {
