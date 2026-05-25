@@ -36,6 +36,18 @@ const heroSlides = [
   },
   {
     type: "poster",
+    image: "/images/insaniyat-dostorkhan.png",
+    badge: "মানবিক উদ্যোগ",
+    title: "ইনসানিয়াত দস্তরখান",
+    subtitle:
+      "বস্তি, ছিন্নমূল ও সুবিধাবঞ্চিত শিশুদের জন্য নিয়মিত খাবার বিতরণ কর্মসূচি",
+    button: "বিস্তারিত দেখুন",
+    href: "/events/insaniyat-dostorkhan",
+    accent: "emerald",
+  },
+
+  {
+    type: "poster",
     image: "/images/hero-event-2.jpg",
     badge: "দাওয়াতনামা",
     title: "বিশেষ দাওয়াতনামা",
