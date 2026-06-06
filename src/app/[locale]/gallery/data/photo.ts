@@ -50,6 +50,7 @@ export const galleries = [
       "/images/Gallery/Distribution%20of%20winter%20clothes/Distribution-of-winter-clothes-4.jpg",
       "/images/Gallery/Distribution%20of%20winter%20clothes/Distribution-of-winter-clothes-5.jpg",
       "/images/Gallery/Distribution%20of%20winter%20clothes/Distribution-of-winter-clothes-6.jpg",
+      "/images/Gallery/Distribution%20of%20winter%20clothes/Distribution-of-winter-clothes-7.jpg",
     ],
   },
   {

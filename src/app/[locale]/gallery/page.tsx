@@ -25,34 +25,44 @@ import { videos } from "./data/video";
 
 export default function MediaGalleryPage() {
   const [mainTab, setMainTab] = useState("photos");
-  const [activePhotoTab, setActivePhotoTab] = useState("ramadan-food");
+  const [activePhotoTab, setActivePhotoTab] = useState("all");
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+
+  const allGallery = {
+    value: "all",
+    label: "সব ছবি",
+    images: galleries.flatMap((gallery) => gallery.images),
+  };
+
+  const photoGalleries = [allGallery, ...galleries];
 
   return (
     <>
+      {" "}
       <section className="py-16 lg:py-24">
+        {" "}
         <div className="mx-auto max-w-7xl px-4">
+          {" "}
           <div className="mx-auto mb-10 max-w-3xl text-center">
+            {" "}
             <Badge
               variant="outline"
               className="mb-4 border-emerald-200 bg-emerald-50 px-4 py-1.5 text-emerald-700"
             >
+              {" "}
               <Images className="mr-2 h-4 w-4" />
-              মিডিয়া গ্যালারি
+              মিডিয়া গ্যালারি{" "}
             </Badge>
-
+            ```
             <h1 className="text-3xl font-extrabold tracking-tight text-emerald-950 sm:text-4xl lg:text-5xl">
               আমাদের কার্যক্রমের ছবি ও ভিডিও
             </h1>
-
             <div className="mx-auto my-6 h-1 w-24 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-700" />
-
             <p className="text-base leading-8 text-slate-600">
               আমাদের মানবিক, শিক্ষা ও সামাজিক কার্যক্রমের বিশেষ মুহূর্তগুলো ছবি
               ও ভিডিওর মাধ্যমে দেখুন।
             </p>
           </div>
-
           <Tabs value={mainTab} onValueChange={setMainTab} className="w-full">
             <TabsList className="mx-auto mb-10 grid h-auto max-w-md grid-cols-2 rounded-2xl bg-emerald-50 p-1.5">
               <TabsTrigger
@@ -89,7 +99,7 @@ export default function MediaGalleryPage() {
                     </SelectTrigger>
 
                     <SelectContent className="rounded-2xl border-emerald-100">
-                      {galleries.map((gallery) => (
+                      {photoGalleries.map((gallery) => (
                         <SelectItem
                           key={gallery.value}
                           value={gallery.value}
@@ -103,7 +113,7 @@ export default function MediaGalleryPage() {
                 </div>
 
                 <TabsList className="mx-auto mb-10 hidden h-auto max-w-5xl flex-wrap justify-center gap-3 bg-transparent lg:flex">
-                  {galleries.map((gallery) => (
+                  {photoGalleries.map((gallery) => (
                     <TabsTrigger
                       key={gallery.value}
                       value={gallery.value}
@@ -114,11 +124,11 @@ export default function MediaGalleryPage() {
                   ))}
                 </TabsList>
 
-                {galleries.map((gallery) => (
+                {photoGalleries.map((gallery) => (
                   <TabsContent key={gallery.value} value={gallery.value}>
                     <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
                       {gallery.images.map((src, index) => (
-                        <Dialog key={src}>
+                        <Dialog key={`${gallery.value}-${src}-${index}`}>
                           <DialogTrigger asChild>
                             <Card className="group cursor-pointer overflow-hidden rounded-2xl border-emerald-100 bg-white shadow-lg shadow-emerald-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-900/10 sm:rounded-3xl">
                               <div className="relative aspect-[4/3] overflow-hidden bg-emerald-50">
@@ -210,7 +220,6 @@ export default function MediaGalleryPage() {
           </Tabs>
         </div>
       </section>
-
       <Dialog
         open={!!selectedVideo}
         onOpenChange={() => setSelectedVideo(null)}
