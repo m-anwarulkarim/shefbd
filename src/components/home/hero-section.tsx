@@ -29,7 +29,8 @@ const heroSlides = [
     image: "/images/hero-event-1.jpg",
     badge: "বিশেষ আয়োজন",
     title: "ইমামুল হিন্দ শাহ ওয়ালীউল্লাহ দেহলভী রহ. কনফারেন্স",
-    subtitle: "ইসলামী চিন্তা, তাজদীদ ও উম্মাহর পুনর্জাগরণে তাঁর অবদান",
+    subtitle:
+      "নতুন তারিখ: ১৮ জুলাই ২০২৬ | বাংলাদেশ সফর: ১৪ জুলাই থেকে ২৫ জুলাই ২০২৬",
     button: "বিস্তারিত দেখুন",
     href: "/events/shah-waliullah-conference",
     accent: "emerald",
@@ -62,7 +63,7 @@ const heroSlides = [
     image: "/images/hero-event-3.jpg",
     badge: "প্রোগ্রামসূচি",
     title: "বাংলাদেশ সফরের সম্ভাব্য প্রোগ্রামসূচি",
-    subtitle: "১৪ আগস্ট ২০২৬ থেকে ২২ আগস্ট ২০২৬ পর্যন্ত বিভিন্ন শহরে অনুষ্ঠান",
+    subtitle: "১৪ জুলাই ২০২৬ থেকে ২৫ জুলাই ২০২৬ পর্যন্ত বিভিন্ন শহরে অনুষ্ঠান",
     button: "সূচি দেখুন",
     href: "/events/program-schedule",
     accent: "emerald",

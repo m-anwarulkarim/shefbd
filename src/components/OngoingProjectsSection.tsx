@@ -123,13 +123,13 @@ export default function OngoingProjectsSection() {
                     চলমান প্রকল্প
                   </span>
 
-                  <Button
+                  {/* <Button
                     size="icon"
                     variant="ghost"
                     className="h-8 w-8 rounded-full text-emerald-700 hover:bg-emerald-50 hover:text-emerald-800 sm:h-9 sm:w-9"
                   >
                     <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 sm:h-4 sm:w-4" />
-                  </Button>
+                  </Button> */}
                 </div>
               </CardContent>
             </Card>
